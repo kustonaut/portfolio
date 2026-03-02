@@ -1581,6 +1581,166 @@
     }
 
     /* ═══════════════════════════════════════════════════════════
+       RECOMMENDATIONS
+       ═══════════════════════════════════════════════════════════ */
+    .recs-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .recs-tab {
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .recs-tab:hover {
+      border-color: var(--border-hover);
+      color: var(--text-primary);
+    }
+
+    .recs-tab.active {
+      background: var(--accent-cyan);
+      border-color: var(--accent-cyan);
+      color: var(--bg-primary);
+    }
+
+    .recs-panel {
+      display: none;
+    }
+
+    .recs-panel.active {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    /* Books grid */
+    .recs-panel[data-panel="books"].active {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .book-card {
+      display: flex;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .book-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    .book-cover {
+      width: 80px;
+      height: 120px;
+      border-radius: 6px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .book-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      min-width: 0;
+    }
+
+    .book-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .book-author {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .book-blurb {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-top: 0.15rem;
+    }
+
+    .book-takeaway {
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      font-style: italic;
+      margin-top: auto;
+      padding-top: 0.5rem;
+    }
+
+    /* Resources list (docs, courses, videos) */
+    .recs-panel[data-panel="docs"].active,
+    .recs-panel[data-panel="courses"].active,
+    .recs-panel[data-panel="videos"].active {
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+
+    .rec-card {
+      padding: 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .rec-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    .rec-card-type {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-emerald);
+      font-weight: 600;
+    }
+
+    .rec-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .rec-card-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .rec-card-link {
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      margin-top: auto;
+      padding-top: 0.25rem;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
        RESPONSIVE
        ═══════════════════════════════════════════════════════════ */
     @media (max-width: 1024px) {
@@ -1622,6 +1782,16 @@
       }
 
       .writing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .recs-panel[data-panel="books"].active {
+        grid-template-columns: 1fr;
+      }
+
+      .recs-panel[data-panel="docs"].active,
+      .recs-panel[data-panel="courses"].active,
+      .recs-panel[data-panel="videos"].active {
         grid-template-columns: 1fr;
       }
     }
@@ -1785,6 +1955,7 @@
         <li><a href="#stack">Stack</a></li>
         <li><a href="#philosophy">Philosophy</a></li>
         <li><a href="#writing">Writing</a></li>
+        <li><a href="#recommendations">Recs</a></li>
         <li><a href="https://github.com/kustonaut" target="_blank" rel="noopener" class="nav-cta">GitHub →</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -2453,6 +2624,225 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
+       RECOMMENDATIONS
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="recommendations">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <div class="section-label">Recommendations</div>
+        <h2 class="section-title">What shaped how I think.</h2>
+        <p class="section-desc">Books I've read cover to cover, docs I keep bookmarked, courses that actually changed how I work, and talks I rewatch.</p>
+      </div>
+
+      <div class="recs-tabs reveal">
+        <button class="recs-tab active" data-tab="books">📚 Books</button>
+        <button class="recs-tab" data-tab="docs">📄 Docs</button>
+        <button class="recs-tab" data-tab="courses">🎓 Courses</button>
+        <button class="recs-tab" data-tab="videos">🎬 Videos</button>
+      </div>
+
+      <!-- BOOKS -->
+      <div class="recs-panel active" data-panel="books">
+
+        <div class="book-card reveal">
+          <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/9780735211292-M.jpg" alt="Atomic Habits cover" loading="lazy" />
+          <div class="book-info">
+            <div class="book-title">Atomic Habits</div>
+            <div class="book-author">James Clear</div>
+            <div class="book-blurb">Rewired how I build systems. I stopped setting goals and started designing cue→routine→reward loops for everything—daily triage, spec writing, even exercise.</div>
+            <div class="book-takeaway">“1% daily compounds. Systems beat goals every time.”</div>
+          </div>
+        </div>
+
+        <div class="book-card reveal">
+          <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/9780062663078-M.jpg" alt="Never Split the Difference cover" loading="lazy" />
+          <div class="book-info">
+            <div class="book-title">Never Split the Difference</div>
+            <div class="book-author">Chris Voss</div>
+            <div class="book-blurb">Changed every stakeholder negotiation I've had since. Tactical empathy, labeling, and calibrated questions work in product reviews, not just hostage situations.</div>
+            <div class="book-takeaway">“‘No’ is the start of negotiation, not the end.”</div>
+          </div>
+        </div>
+
+        <div class="book-card reveal">
+          <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/9780307887894-M.jpg" alt="The Lean Startup cover" loading="lazy" />
+          <div class="book-info">
+            <div class="book-title">The Lean Startup</div>
+            <div class="book-author">Eric Ries</div>
+            <div class="book-blurb">Build→Measure→Learn isn’t just for startups. Every automation I ship follows this loop. Test with a script before building a pipeline.</div>
+            <div class="book-takeaway">“Vanity metrics lie. Ship the MVP. Learn fast.”</div>
+          </div>
+        </div>
+
+        <div class="book-card reveal">
+          <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/9781455586691-M.jpg" alt="Deep Work cover" loading="lazy" />
+          <div class="book-info">
+            <div class="book-title">Deep Work</div>
+            <div class="book-author">Cal Newport</div>
+            <div class="book-blurb">I time-block 2–3 hours for spec writing with everything off. This book is why Brain OS handles shallow work so I can focus on what matters.</div>
+            <div class="book-takeaway">“The ability to focus without distraction is increasingly rare—and valuable.”</div>
+          </div>
+        </div>
+
+        <div class="book-card reveal">
+          <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/9780399563829-M.jpg" alt="Extreme Ownership cover" loading="lazy" />
+          <div class="book-info">
+            <div class="book-title">Extreme Ownership</div>
+            <div class="book-author">Jocko Willink &amp; Leif Babin</div>
+            <div class="book-blurb">When things go wrong, I say “this is mine.” No blaming engineering, no blaming process. The PM owns the outcome. Period.</div>
+            <div class="book-takeaway">“No bad teams, only bad leaders.”</div>
+          </div>
+        </div>
+
+        <div class="book-card reveal">
+          <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/9780066620992-M.jpg" alt="Good to Great cover" loading="lazy" />
+          <div class="book-info">
+            <div class="book-title">Good to Great</div>
+            <div class="book-author">Jim Collins</div>
+            <div class="book-blurb">The flywheel concept runs my entire automation philosophy. Each improvement compounds. The Hedgehog Concept forced me to find my intersection of passion, skill, and impact.</div>
+            <div class="book-takeaway">“Flywheel: consistent turns beat heroic pushes.”</div>
+          </div>
+        </div>
+
+        <div class="book-card reveal">
+          <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/9780525533832-M.jpg" alt="The Infinite Game cover" loading="lazy" />
+          <div class="book-info">
+            <div class="book-title">The Infinite Game</div>
+            <div class="book-author">Simon Sinek</div>
+            <div class="book-blurb">Stopped me from optimizing for quarterly metrics and started me building systems that outlast me. Worthy rivals, not competitors.</div>
+            <div class="book-takeaway">“Play the long game. Build things that outlast you.”</div>
+          </div>
+        </div>
+
+        <div class="book-card reveal">
+          <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/9780060521998-M.jpg" alt="The E-Myth Revisited cover" loading="lazy" />
+          <div class="book-info">
+            <div class="book-title">The E-Myth Revisited</div>
+            <div class="book-author">Michael E. Gerber</div>
+            <div class="book-blurb">Work ON the system, not IN it. This is literally why Brain OS exists. If I’m always fighting fires, I’m not building systems that prevent them.</div>
+            <div class="book-takeaway">“Document everything as if you’re franchising.”</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- DOCS -->
+      <div class="recs-panel" data-panel="docs">
+
+        <a class="rec-card reveal" href="https://learn.microsoft.com/en-us/office/dev/add-ins/" target="_blank" rel="noopener">
+          <div class="rec-card-type">Official Docs</div>
+          <div class="rec-card-title">Office Add-ins Documentation</div>
+          <div class="rec-card-desc">The canonical reference for everything Office JS API. I live in these docs daily. Start with the overview, then deep-dive into the Word, Excel, or Outlook-specific sections.</div>
+          <div class="rec-card-link">learn.microsoft.com →</div>
+        </a>
+
+        <a class="rec-card reveal" href="https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/" target="_blank" rel="noopener">
+          <div class="rec-card-type">Official Docs</div>
+          <div class="rec-card-title">KQL Language Reference</div>
+          <div class="rec-card-desc">The definitive KQL reference. After 365 days of daily KQL challenges, this became muscle memory. Essential for anyone doing data engineering on Azure.</div>
+          <div class="rec-card-link">learn.microsoft.com →</div>
+        </a>
+
+        <a class="rec-card reveal" href="https://platform.openai.com/docs" target="_blank" rel="noopener">
+          <div class="rec-card-type">Official Docs</div>
+          <div class="rec-card-title">OpenAI API Documentation</div>
+          <div class="rec-card-desc">Reference for building AI integrations. Clear examples, good playground. Brain OS uses the Chat Completions API for triage, brief generation, and skill orchestration.</div>
+          <div class="rec-card-link">platform.openai.com →</div>
+        </a>
+
+        <a class="rec-card reveal" href="https://docs.github.com/en/copilot/customizing-copilot" target="_blank" rel="noopener">
+          <div class="rec-card-type">Official Docs</div>
+          <div class="rec-card-title">GitHub Copilot Customization Guide</div>
+          <div class="rec-card-desc">How to build custom Copilot instructions, skills, and agents. This is how Brain OS has 27 skills wired into VS Code — each with domain-specific prompts and tool access.</div>
+          <div class="rec-card-link">docs.github.com →</div>
+        </a>
+
+        <a class="rec-card reveal" href="https://learn.microsoft.com/en-us/graph/overview" target="_blank" rel="noopener">
+          <div class="rec-card-type">Official Docs</div>
+          <div class="rec-card-title">Microsoft Graph API Overview</div>
+          <div class="rec-card-desc">The API surface for all of Microsoft 365. Brain OS pulls email, calendar, and Teams data through Graph. Indispensable for PM automation on the Microsoft stack.</div>
+          <div class="rec-card-link">learn.microsoft.com →</div>
+        </a>
+
+      </div>
+
+      <!-- COURSES -->
+      <div class="recs-panel" data-panel="courses">
+
+        <a class="rec-card reveal" href="https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/" target="_blank" rel="noopener">
+          <div class="rec-card-type">Free Course</div>
+          <div class="rec-card-title">ChatGPT Prompt Engineering for Developers</div>
+          <div class="rec-card-desc">Andrew Ng + Isa Fulford. Short, practical, changed how I write every prompt in my automation pipeline. The iterative refinement approach is gold.</div>
+          <div class="rec-card-link">deeplearning.ai →</div>
+        </a>
+
+        <a class="rec-card reveal" href="https://www.reforge.com/programs/product-management" target="_blank" rel="noopener">
+          <div class="rec-card-type">Program</div>
+          <div class="rec-card-title">Reforge Product Management</div>
+          <div class="rec-card-desc">Frameworks for growth, retention loops, and strategy. Better than any MBA course I’ve seen for practicing PMs. The cohort discussions alone are worth it.</div>
+          <div class="rec-card-link">reforge.com →</div>
+        </a>
+
+        <a class="rec-card reveal" href="https://www.coursera.org/learn/learning-how-to-learn" target="_blank" rel="noopener">
+          <div class="rec-card-type">Free Course</div>
+          <div class="rec-card-title">Learning How to Learn</div>
+          <div class="rec-card-desc">Barbara Oakley’s course on meta-learning. Changed how I absorb technical domains fast — critical when switching from Azure Data to Office Extensibility.</div>
+          <div class="rec-card-link">coursera.org →</div>
+        </a>
+
+        <a class="rec-card reveal" href="https://learn.microsoft.com/en-us/training/paths/create-use-analytics-reports-power-bi/" target="_blank" rel="noopener">
+          <div class="rec-card-type">Microsoft Learn</div>
+          <div class="rec-card-title">Power BI for Data Analysis</div>
+          <div class="rec-card-desc">Solid path if you’re building dashboards or data stories. I use the DAX mental model even when I’m in KQL or Python.</div>
+          <div class="rec-card-link">learn.microsoft.com →</div>
+        </a>
+
+      </div>
+
+      <!-- VIDEOS -->
+      <div class="recs-panel" data-panel="videos">
+
+        <a class="rec-card reveal" href="https://www.youtube.com/watch?v=Unzc731iCUY" target="_blank" rel="noopener">
+          <div class="rec-card-type">Talk · 22 min</div>
+          <div class="rec-card-title">How Great Leaders Inspire Action — Simon Sinek</div>
+          <div class="rec-card-desc">The “Start with Why” TED Talk. I rewatch this before any major presentation. Frames everything around purpose rather than features.</div>
+          <div class="rec-card-link">youtube.com →</div>
+        </a>
+
+        <a class="rec-card reveal" href="https://www.youtube.com/watch?v=UF8uR6Z6KLc" target="_blank" rel="noopener">
+          <div class="rec-card-type">Talk · 21 min</div>
+          <div class="rec-card-title">Steve Jobs: How to Live Before You Die</div>
+          <div class="rec-card-desc">The Stanford commencement. “Stay hungry, stay foolish.” I listen to this every year. The dots only connect looking backwards.</div>
+          <div class="rec-card-link">youtube.com →</div>
+        </a>
+
+        <a class="rec-card reveal" href="https://www.youtube.com/watch?v=kYfNvmF0Bqw" target="_blank" rel="noopener">
+          <div class="rec-card-type">Talk · 18 min</div>
+          <div class="rec-card-title">The First 20 Hours — Josh Kaufman</div>
+          <div class="rec-card-desc">How to learn anything fast enough to be dangerous. This is how I approach every new domain—KQL, Office JS APIs, AI agent orchestration.</div>
+          <div class="rec-card-link">youtube.com →</div>
+        </a>
+
+        <a class="rec-card reveal" href="https://www.youtube.com/watch?v=5MgBikgcWnY" target="_blank" rel="noopener">
+          <div class="rec-card-type">Talk · 13 min</div>
+          <div class="rec-card-title">The Puzzle of Motivation — Dan Pink</div>
+          <div class="rec-card-desc">Autonomy, mastery, purpose. Explains why Brain OS exists — I wanted mastery over my own workflow, and the autonomy to build what PM tools should be.</div>
+          <div class="rec-card-link">youtube.com →</div>
+        </a>
+
+        <a class="rec-card reveal" href="https://www.youtube.com/watch?v=hVimVzgtD6w" target="_blank" rel="noopener">
+          <div class="rec-card-type">Talk · 10 min</div>
+          <div class="rec-card-title">GitHub Copilot Workspace Demo — Thomas Dohmke</div>
+          <div class="rec-card-desc">The future of AI-first development. Shows why PM skills + coding + AI orchestration is the career moat of this decade.</div>
+          <div class="rec-card-link">youtube.com →</div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
        CONNECT
        ═══════════════════════════════════════════════════════════ -->
   <section class="connect" id="connect">
@@ -2636,6 +3026,16 @@
           const top = target.getBoundingClientRect().top + window.scrollY - offset;
           window.scrollTo({ top, behavior: 'smooth' });
         }
+      });
+    });
+
+    // ─── Recommendations tab switching ───────────────────────
+    document.querySelectorAll('.recs-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.recs-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.recs-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.querySelector(`.recs-panel[data-panel="${tab.dataset.tab}"]`).classList.add('active');
       });
     });
   </script>
