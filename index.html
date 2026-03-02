@@ -1273,6 +1273,158 @@
     }
 
     /* ═══════════════════════════════════════════════════════════
+       LINKEDIN HIGHLIGHTS SECTION
+       ═══════════════════════════════════════════════════════════ */
+    .linkedin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .linkedin-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-decoration: none;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .linkedin-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+    }
+
+    .linkedin-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #0A66C2, #00d4ff);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .linkedin-card:hover::before {
+      opacity: 1;
+    }
+
+    .linkedin-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .linkedin-card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.2rem;
+    }
+
+    .linkedin-card-type {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    .linkedin-card-type.post { color: #0A66C2; }
+    .linkedin-card-type.speaking { color: var(--accent-amber); }
+    .linkedin-card-type.milestone { color: var(--accent-emerald); }
+    .linkedin-card-type.event { color: var(--accent-purple); }
+
+    .linkedin-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .linkedin-card-excerpt {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .linkedin-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: auto;
+      padding-top: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+    }
+
+    .linkedin-card-engagement {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .linkedin-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: linear-gradient(135deg, rgba(10, 102, 194, 0.15), rgba(0, 212, 255, 0.1));
+      border: 1px solid rgba(10, 102, 194, 0.3);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #4DA3E8;
+      margin-bottom: 1rem;
+    }
+
+    .linkedin-badge svg {
+      width: 18px;
+      height: 18px;
+      fill: #0A66C2;
+    }
+
+    .linkedin-cta {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .linkedin-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .linkedin-cta a:hover {
+      border-color: rgba(10, 102, 194, 0.5);
+      background: rgba(10, 102, 194, 0.08);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .linkedin-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
        CONNECT SECTION
        ═══════════════════════════════════════════════════════════ */
     .connect-content {
@@ -1976,6 +2128,7 @@
         <li><a href="#stack">Stack</a></li>
         <li><a href="#philosophy">Philosophy</a></li>
         <li><a href="#writing">Writing</a></li>
+        <li><a href="#linkedin">LinkedIn</a></li>
         <li><a href="#recommendations">Recs</a></li>
         <li><a href="https://github.com/kustonaut" target="_blank" rel="noopener" class="nav-cta">GitHub →</a></li>
       </ul>
@@ -2068,7 +2221,7 @@
 
           <p>I manage <strong>6,000+ open GitHub issues</strong> across the Office Add-ins platform and have <strong>led teams of 15+ engineers</strong>. To handle the scale, I built Brain OS. It pulls signals from email, Teams, ADO, and GitHub every morning. Triages them. Generates a daily brief before my first coffee.</p>
 
-          <p>Microsoft Advocate. Conference speaker. 365-day KQL challenge completer. Solo traveler when not shipping. I believe the best PM tools come from PMs who code.</p>
+          <p>Microsoft Advocate. LinkedIn Top Voice in Product Management. INSEAD alumnus. Conference speaker. 365-day KQL challenge completer. Solo traveler when not shipping. I believe the best PM tools come from PMs who code.</p>
 
           <div class="about-tags">
             <span class="about-tag">Product Management</span>
@@ -2077,7 +2230,9 @@
             <span class="about-tag">Open Source</span>
             <span class="about-tag">Data Engineering</span>
             <span class="about-tag">Microsoft Advocate</span>
+            <span class="about-tag">LinkedIn Top Voice</span>
             <span class="about-tag">Conference Speaker</span>
+            <span class="about-tag">INSEAD</span>
             <span class="about-tag">Solo Travel</span>
           </div>
         </div>
@@ -2639,6 +2794,116 @@
       <div class="writing-cta reveal">
         <a href="https://medium.com/@travelhogburn" target="_blank" rel="noopener">
           Read more on Medium →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       LINKEDIN HIGHLIGHTS
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="linkedin">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <div class="section-label">LinkedIn Highlights</div>
+        <h2 class="section-title">Thought leadership & speaking.</h2>
+        <p class="section-desc">Featured posts, conference talks, and milestones from a decade of building at Microsoft.</p>
+        <span class="linkedin-badge">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn Top Voice — Product Management
+        </span>
+      </div>
+
+      <div class="linkedin-grid reveal">
+        <!-- Speaking Event -->
+        <a href="https://www.linkedin.com/posts/dixitakshay_activity-6829086228357496832-arOO" target="_blank" rel="noopener" class="linkedin-card">
+          <div class="linkedin-card-header">
+            <div class="linkedin-card-icon" style="background: rgba(245, 158, 11, 0.1);">🎤</div>
+            <span class="linkedin-card-type speaking">Speaking</span>
+          </div>
+          <div class="linkedin-card-title">Real-Time Intelligence with Microsoft Fabric</div>
+          <div class="linkedin-card-excerpt">Spoke at Microsoft Office Bengaluru on Real-Time Intelligence with Microsoft Fabric — live demos, architecture deep-dives, and the future of streaming analytics.</div>
+          <div class="linkedin-card-meta">
+            <span>📍 Microsoft Bengaluru</span>
+            <span>Jul 2023</span>
+          </div>
+        </a>
+
+        <!-- AIPM Post -->
+        <a href="https://www.linkedin.com/posts/dixitakshay_the-title-of-aipm-is-becoming-increasingly-activity-7432106831080218624-XC9U" target="_blank" rel="noopener" class="linkedin-card">
+          <div class="linkedin-card-header">
+            <div class="linkedin-card-icon" style="background: rgba(10, 102, 194, 0.1);">💡</div>
+            <span class="linkedin-card-type post">Thought Leadership</span>
+          </div>
+          <div class="linkedin-card-title">Why "AIPM" Is Becoming Irrelevant</div>
+          <div class="linkedin-card-excerpt">"The title of AIPM is becoming increasingly irrelevant. All Product Managers should have embraced AI, even if they are not directly building AI products."</div>
+          <div class="linkedin-card-meta">
+            <span class="linkedin-card-engagement">🔥 Viral</span>
+            <span>2025</span>
+          </div>
+        </a>
+
+        <!-- PM OS Post -->
+        <a href="https://www.linkedin.com/posts/dixitakshay_pm-os-activity-7432495366878580736-FvYa" target="_blank" rel="noopener" class="linkedin-card">
+          <div class="linkedin-card-header">
+            <div class="linkedin-card-icon" style="background: rgba(124, 58, 237, 0.1);">🧠</div>
+            <span class="linkedin-card-type post">Featured Post</span>
+          </div>
+          <div class="linkedin-card-title">PM OS — Saving 11 Hours a Week with AI</div>
+          <div class="linkedin-card-excerpt">"I am saving 11 hours a week already by building a PM OS in VS Code + Copilot. Week 1 in an 'All-In AI' org at Microsoft, I was doing it completely wrong."</div>
+          <div class="linkedin-card-meta">
+            <span class="linkedin-card-engagement">💬 High engagement</span>
+            <span>2025</span>
+          </div>
+        </a>
+
+        <!-- 10 Year Anniversary -->
+        <a href="https://www.linkedin.com/posts/dixitakshay_microsoft-10year-activity-7265309431003770881-3h4c" target="_blank" rel="noopener" class="linkedin-card">
+          <div class="linkedin-card-header">
+            <div class="linkedin-card-icon" style="background: rgba(34, 197, 94, 0.1);">🏆</div>
+            <span class="linkedin-card-type milestone">Milestone</span>
+          </div>
+          <div class="linkedin-card-title">10 Years at Microsoft</div>
+          <div class="linkedin-card-excerpt">A decade of building products across Azure, Data Platform, and Office Extensibility. 54 comments including congratulations from Principal PM Leads and engineering partners.</div>
+          <div class="linkedin-card-meta">
+            <span class="linkedin-card-engagement">💬 54 comments</span>
+            <span>2024</span>
+          </div>
+        </a>
+
+        <!-- Build 2024 -->
+        <a href="https://www.linkedin.com/posts/dixitakshay_microsoft-build-may-21-23-2024-seattle-activity-7198525869714284545-hiJu" target="_blank" rel="noopener" class="linkedin-card">
+          <div class="linkedin-card-header">
+            <div class="linkedin-card-icon" style="background: rgba(124, 58, 237, 0.1);">🚀</div>
+            <span class="linkedin-card-type event">Conference</span>
+          </div>
+          <div class="linkedin-card-title">Microsoft Build 2024 — Seattle</div>
+          <div class="linkedin-card-excerpt">Attended Microsoft's flagship developer conference. Copilot era, Azure AI, and the future of extensibility platform — all in one place.</div>
+          <div class="linkedin-card-meta">
+            <span>📍 Seattle, WA</span>
+            <span>May 2024</span>
+          </div>
+        </a>
+
+        <!-- Kusto / Real-Time Analytics -->
+        <a href="https://www.linkedin.com/posts/dixitakshay_microsoft-activity-6826178869234667520-Itnf" target="_blank" rel="noopener" class="linkedin-card">
+          <div class="linkedin-card-header">
+            <div class="linkedin-card-icon" style="background: rgba(0, 212, 255, 0.1);">📊</div>
+            <span class="linkedin-card-type post">Featured Post</span>
+          </div>
+          <div class="linkedin-card-title">Kusto in Fabric — Real-Time Analytics</div>
+          <div class="linkedin-card-excerpt">"Kusto in Microsoft Fabric is known as Real-Time Analytics." Shared the rebrand story and what it means for streaming data at Microsoft scale.</div>
+          <div class="linkedin-card-meta">
+            <span class="linkedin-card-engagement">🔗 Product launch</span>
+            <span>2023</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="linkedin-cta reveal">
+        <a href="https://www.linkedin.com/in/dixitakshay/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Connect on LinkedIn →
         </a>
       </div>
     </div>
