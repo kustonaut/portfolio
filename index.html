@@ -119,10 +119,12 @@
       z-index: 100;
       padding: 0 2rem;
       transition: var(--transition);
+      background: rgba(6, 6, 11, 0.6);
+      backdrop-filter: blur(12px);
     }
 
     nav.scrolled {
-      background: rgba(6, 6, 11, 0.85);
+      background: rgba(6, 6, 11, 0.92);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
@@ -137,11 +139,30 @@
     }
 
     .nav-logo {
-      font-family: var(--font-mono);
-      font-weight: 600;
-      font-size: 1.25rem;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 1.15rem;
       color: var(--text-primary);
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .nav-logo-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--gradient-primary);
+      color: #000;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: -0.03em;
+      flex-shrink: 0;
     }
 
     .nav-logo .accent {
@@ -154,7 +175,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 1.5rem;
       list-style: none;
     }
 
@@ -1947,7 +1968,7 @@
   <!-- Navigation -->
   <nav id="nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo"><span class="accent">ak</span>shay</a>
+      <a href="#" class="nav-logo"><span class="nav-logo-mark">AD</span><span class="accent">Akshay</span> Dixit</a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#journey">Journey</a></li>
