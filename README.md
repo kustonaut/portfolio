@@ -1,62 +1,26 @@
-# kustonaut.github.io — Portfolio
+# kustonaut.github.io
 
-Personal portfolio site for [Akshay Dixit](https://github.com/kustonaut).
+Personal portfolio of **Akshay Dixit** — Senior Product Manager at Microsoft with 11+ years in cloud engineering, developer platforms, and AI automation.
 
-## Deploy to GitHub Pages
+**[kustonaut.github.io](https://kustonaut.github.io)**
 
-### Option A: User site (`kustonaut.github.io`)
+## What's Inside
 
-1. Create a new GitHub repo named **`kustonaut.github.io`**
-2. Copy the portfolio files into the repo root:
-   ```bash
-   git init
-   cp /path/to/portfolio/* .
-   git add .
-   git commit -m "🚀 Launch portfolio"
-   git remote add origin https://github.com/kustonaut/kustonaut.github.io.git
-   git push -u origin main
-   ```
-3. GitHub Pages auto-deploys user sites. Visit **https://kustonaut.github.io** within a few minutes.
+- **About** — Career narrative from cloud infrastructure to AI-first PM tooling
+- **By the Numbers** — 6,000+ GitHub issues managed, 50+ automations, 27 Copilot skills
+- **Journey** — Four chapters: Cloud Ops → Azure Data Explorer → Office Extensibility → PM Intelligence
+- **Projects** — Six open-source tools including [Brain OS](https://github.com/kustonaut/brain-os), [issue-sentinel](https://github.com/kustonaut/issue-sentinel), [365daysofADX](https://github.com/kustonaut/365daysofADX), and more
+- **Writing** — Travel stories, work-life balance, and year-end reflections on [Medium](https://medium.com/@travelhogburn)
+- **Connect** — [GitHub](https://github.com/kustonaut) · [LinkedIn](https://www.linkedin.com/in/dixitakshay/) · [X](https://x.com/kustonaut) · [Medium](https://medium.com/@travelhogburn)
 
-### Option B: Project site (any repo)
+## Built With
 
-1. In the repo, go to **Settings → Pages**
-2. Set Source: **Deploy from a branch**
-3. Select branch: `main`, folder: `/ (root)`
-4. Push `index.html` to the repo root
-5. Site will be available at `https://kustonaut.github.io/<repo-name>/`
+Pure HTML, CSS, and JavaScript. No frameworks, no build tools, no dependencies.
 
-### Custom Domain (optional)
-
-1. Add a `CNAME` file with your domain (e.g., `akshaydixit.dev`)
-2. Configure DNS:
-   - CNAME record: `kustonaut.github.io`
-   - Or A records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-3. In repo Settings → Pages → Custom domain, enter your domain
-4. Enable **Enforce HTTPS**
-
-## Tech
-
-- Pure HTML/CSS/JS — no build tools, no frameworks
-- Google Fonts (Inter + JetBrains Mono)
-- Intersection Observer for scroll animations
-- Animated counter for metrics
-- Typing animation for hero taglines
-- Mobile responsive
-- Reduced-motion support
-- Dark theme
-
-## Structure
-
-```
-portfolio/
-├── index.html    # Complete portfolio (single file)
-└── README.md     # This file
-```
-
-## Customization
-
-All styling uses CSS custom properties at the top of `index.html`. Change colors, fonts, or spacing by editing the `:root` block.
+- Dark theme with cyan/purple gradient accents
+- Scroll-reveal animations via Intersection Observer
+- Typing animation, animated counters, smooth scrolling
+- Fully responsive, reduced-motion friendly
 
 ---
 
