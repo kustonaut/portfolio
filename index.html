@@ -1106,20 +1106,53 @@
       gap: 1.5rem;
     }
 
+    .writing-card-link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
     .writing-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 2rem;
+      overflow: hidden;
       transition: var(--transition);
       display: flex;
       flex-direction: column;
+      height: 100%;
     }
 
     .writing-card:hover {
       border-color: var(--border-hover);
       transform: translateY(-4px);
       box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+    }
+
+    .writing-card-img {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .writing-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .writing-card:hover .writing-card-img img {
+      transform: scale(1.05);
+    }
+
+    .writing-card-body {
+      padding: 1.5rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     .writing-tag {
@@ -1957,45 +1990,73 @@
       </div>
 
       <div class="writing-grid">
-        <div class="writing-card reveal reveal-delay-1">
-          <span class="writing-tag travel">Travel</span>
-          <h3 class="writing-title">Why Bruges is the most beautiful city in Europe</h3>
-          <div class="writing-meta">
-            <span>Mar 2019</span>
-            <span class="writing-claps">👏 111</span>
+        <a href="https://medium.com/@travelhogburn/why-bruges-is-the-most-beautiful-city-in-europe-32273e1f2948" target="_blank" rel="noopener" class="writing-card-link reveal reveal-delay-1">
+          <div class="writing-card">
+            <div class="writing-card-img">
+              <img src="https://cdn-images-1.medium.com/max/720/1*zaysug77zlPcBgzCabQWqw.png" alt="Bruges, Belgium" loading="lazy" />
+            </div>
+            <div class="writing-card-body">
+              <span class="writing-tag travel">Travel</span>
+              <h3 class="writing-title">Why Bruges is the most beautiful city in Europe</h3>
+              <div class="writing-meta">
+                <span>Mar 2019</span>
+                <span class="writing-claps">👏 111</span>
+              </div>
+              <p class="writing-excerpt">Medieval lanes, chocolate shops on every corner, and canals that make you forget you have a return flight. The city that ends every "most beautiful" debate.</p>
+            </div>
           </div>
-          <p class="writing-excerpt">Medieval lanes, chocolate shops on every corner, and canals that make you forget you have a return flight. The city that ends every "most beautiful" debate.</p>
-        </div>
+        </a>
 
-        <div class="writing-card reveal reveal-delay-2">
-          <span class="writing-tag work-life">Work-Life</span>
-          <h3 class="writing-title">3 things that helped me manage Microsoft + solo travel</h3>
-          <div class="writing-meta">
-            <span>Jan 2022</span>
-            <span class="writing-claps">👏 49</span>
+        <a href="https://medium.com/@travelhogburn/3-hings-that-helped-me-effectively-manage-a-full-time-job-at-microsoft-while-safely-traveling-solo-ecb8bc07dee1" target="_blank" rel="noopener" class="writing-card-link reveal reveal-delay-2">
+          <div class="writing-card">
+            <div class="writing-card-img">
+              <img src="https://cdn-images-1.medium.com/max/720/1*vrfFBJ0sGy5044H3gzzCKA.jpeg" alt="Managing work and travel" loading="lazy" />
+            </div>
+            <div class="writing-card-body">
+              <span class="writing-tag work-life">Work-Life</span>
+              <h3 class="writing-title">3 things that helped me manage Microsoft + solo travel</h3>
+              <div class="writing-meta">
+                <span>Jan 2022</span>
+                <span class="writing-claps">👏 49</span>
+              </div>
+              <p class="writing-excerpt">Full-time job. Solo trips. Both non-negotiable. Here's how I stopped treating them as competing priorities.</p>
+            </div>
           </div>
-          <p class="writing-excerpt">Full-time job. Solo trips. Both non-negotiable. Here's how I stopped treating them as competing priorities.</p>
-        </div>
+        </a>
 
-        <div class="writing-card reveal reveal-delay-3">
-          <span class="writing-tag adventure">Adventure</span>
-          <h3 class="writing-title">Solo all-India tour on a Royal Enfield Himalayan</h3>
-          <div class="writing-meta">
-            <span>Sep 2021</span>
-            <span class="writing-claps">👏 26</span>
+        <a href="https://medium.com/@travelhogburn/why-did-i-decide-to-do-a-solo-all-india-tour-on-a-royal-enfield-himalayan-cf62e1a9c831" target="_blank" rel="noopener" class="writing-card-link reveal reveal-delay-3">
+          <div class="writing-card">
+            <div class="writing-card-img">
+              <img src="https://cdn-images-1.medium.com/max/720/0*migvLE1iNG_dDO6n" alt="Royal Enfield Himalayan tour" loading="lazy" />
+            </div>
+            <div class="writing-card-body">
+              <span class="writing-tag adventure">Adventure</span>
+              <h3 class="writing-title">Solo all-India tour on a Royal Enfield Himalayan</h3>
+              <div class="writing-meta">
+                <span>Sep 2021</span>
+                <span class="writing-claps">👏 26</span>
+              </div>
+              <p class="writing-excerpt">International trip cancelled. Motorcycle acquired. 2020 had other plans, so I rode across India instead.</p>
+            </div>
           </div>
-          <p class="writing-excerpt">International trip cancelled. Motorcycle acquired. 2020 had other plans, so I rode across India instead.</p>
-        </div>
+        </a>
 
-        <div class="writing-card reveal reveal-delay-4">
-          <span class="writing-tag reflection">Reflection</span>
-          <h3 class="writing-title">2021 Recap: Gratitude for opportunities in uncertainties</h3>
-          <div class="writing-meta">
-            <span>Jan 2022</span>
-            <span class="writing-claps">👏 34</span>
+        <a href="https://medium.com/@travelhogburn/2021-recap-gratitude-for-opportunities-in-uncertainties-91984abee39e" target="_blank" rel="noopener" class="writing-card-link reveal reveal-delay-4">
+          <div class="writing-card">
+            <div class="writing-card-img">
+              <img src="https://cdn-images-1.medium.com/max/720/0*6jlWXoC4bhaQYb5b" alt="2021 year in review" loading="lazy" />
+            </div>
+            <div class="writing-card-body">
+              <span class="writing-tag reflection">Reflection</span>
+              <h3 class="writing-title">2021 Recap: Gratitude for opportunities in uncertainties</h3>
+              <div class="writing-meta">
+                <span>Jan 2022</span>
+                <span class="writing-claps">👏 34</span>
+              </div>
+              <p class="writing-excerpt">A year that started in lockdown and ended with a motorcycle across India. Not the plan. Better than the plan.</p>
+            </div>
           </div>
-          <p class="writing-excerpt">A year that started in lockdown and ended with a motorcycle across India. Not the plan. Better than the plan.</p>
-        </div>
+        </a>
       </div>
 
       <div class="writing-cta reveal">
