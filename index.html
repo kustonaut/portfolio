@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akshay Dixit — PM Who Codes</title>
-  <meta name="description" content="Senior Product Manager at Microsoft with 11+ years. Office Extensibility, AI automation, and open-source PM intelligence systems.">
+  <title>Akshay Dixit — Product Leader</title>
+  <meta name="description" content="Senior Product Manager at Microsoft with 11+ years. Data platforms at petabyte scale. Developer ecosystems. AI-powered product systems.">
   <meta name="author" content="Akshay Dixit">
-  <meta property="og:title" content="Akshay Dixit — PM Who Codes">
-  <meta property="og:description" content="Senior Product Manager at Microsoft with 11+ years. Building AI-powered developer tools and open-source PM intelligence systems.">
+  <meta property="og:title" content="Akshay Dixit — Product Leader">
+  <meta property="og:description" content="Senior Product Manager at Microsoft with 11+ years. Scaled data platforms to 350 PB/day. Building AI-powered product systems.">
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/82602276?v=4">
   <meta property="og:url" content="https://kustonaut.github.io/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@kustonaut">
-  <meta name="twitter:title" content="Akshay Dixit — PM Who Codes">
-  <meta name="twitter:description" content="Senior Product Manager at Microsoft with 11+ years. Building AI-powered PM intelligence systems.">
+  <meta name="twitter:title" content="Akshay Dixit — Product Leader">
+  <meta name="twitter:description" content="Senior Product Manager at Microsoft with 11+ years. Data platforms at petabyte scale. Developer ecosystems. AI-powered product systems.">
   <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/82602276?v=4">
   <link rel="canonical" href="https://kustonaut.github.io/">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -448,7 +448,24 @@
       color: var(--text-primary);
     }
 
-    .hero-scroll-hint {
+        .hero-credentials {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      letter-spacing: 0.03em;
+    }
+
+    .hero-credentials span:not(:nth-child(odd)) {
+      color: var(--text-quaternary, #444);
+    }
+
+.hero-scroll-hint {
       position: absolute;
       bottom: 2rem;
       left: 50%;
@@ -635,6 +652,46 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
+    }
+
+    /* ── Impact Section ─────────────────────────────────────── */
+    .impact { padding: var(--section-padding) 0; }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .impact-card {
+      background: var(--bg-card, rgba(255,255,255,0.03));
+      border: 1px solid var(--border-primary, rgba(255,255,255,0.06));
+      border-radius: 16px;
+      padding: 2rem;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .impact-card:hover {
+      border-color: var(--accent-primary, #646cff);
+      transform: translateY(-2px);
+    }
+    .impact-what {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-primary, #646cff);
+      margin-bottom: 0.75rem;
+    }
+    .impact-metric {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    .impact-how {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
     }
 
     .metric-card {
@@ -2125,7 +2182,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#journey">Journey</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#stack">Stack</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#stack">Toolkit</a></li>
         <li><a href="#philosophy">Philosophy</a></li>
         <li><a href="#writing">Writing</a></li>
         <li><a href="#linkedin">LinkedIn</a></li>
@@ -2152,7 +2210,7 @@
     <div class="hero-content">
       <div class="hero-badge">
         <span class="dot"></span>
-        Building in public
+        11+ Years at Microsoft
       </div>
 
       <h1 class="hero-name">
@@ -2164,9 +2222,12 @@
       </div>
 
       <p class="hero-subtitle">
-        Senior Product Manager at Microsoft · Office Extensibility · 11+ years.<br>
-        I build the tools I wish existed.
+        Senior Product Manager at Microsoft · 11+ years building data products, developer platforms, and AI-powered systems from zero to scale.
       </p>
+
+      <div class="hero-credentials">
+        <span>CSM</span><span>·</span><span>INSEAD</span><span>·</span><span>Prosci</span><span>·</span><span>Azure Architect</span><span>·</span><span>Azure AI Engineer</span>
+      </div>
 
       <div class="hero-ctas">
         <a href="#projects" class="btn-primary">
@@ -2214,26 +2275,26 @@
         <div class="about-text reveal">
           <div class="section-header">
             <div class="section-label">About</div>
-            <h2 class="section-title">Most PMs check email first. My AI checks it for me.</h2>
+            <h2 class="section-title">I've spent the last decade turning ambiguous customer signals into products that scale.</h2>
           </div>
 
-          <p>I'm a Senior Product Manager at Microsoft with 11+ years in cloud engineering, developer platforms, and product strategy. Currently on the Office Extensibility team. Previously Azure Data Explorer (Kusto), where "kustonaut" was born.</p>
+          <p>Senior Product Manager at Microsoft with 11+ years across data platforms, developer ecosystems, and product strategy. Drove the ingestion connector ecosystem for Azure Data Explorer (Kusto) and Microsoft Fabric Real-Time Intelligence — growing OSS connector volume by <strong>20x to 40 PB daily</strong> and 1P connectors by <strong>4x to 350 PB daily</strong>, while keeping NPS above 9.</p>
 
-          <p>I own developer reliability for the Office Add-ins platform and have <strong>led teams of 15+ engineers</strong>. To handle the scale, I built Brain OS. It pulls signals from email, Teams, ADO, and GitHub every morning. Triages them. Generates a daily brief before my first coffee.</p>
+          <p>Before product management, I led full-time engineering teams across 3 countries to build blockchain data platforms that <strong>eliminated 98% of fraudulent transactions</strong>, negotiated <strong>$2M in migration budgets</strong> with senior leadership, and architected the Connected Vehicle Platform monitoring <strong>20 million vehicles</strong>. Today I own developer reliability for the Office Add-ins platform at Microsoft.</p>
 
-          <p>Microsoft Advocate. LinkedIn Top Voice in Product Management. INSEAD alumnus. Conference speaker. 365-day KQL challenge completer. Solo traveler when not shipping. I believe the best PM tools come from PMs who code.</p>
+          <p>To handle the scale across 5 charter areas, I built Brain OS — an AI-powered daily operating system that pulls signals from email, Teams, ADO, and GitHub every morning, triages them, and generates a daily intelligence brief. 27 Copilot skills. 50+ automations. Because <strong>the best PM tools come from PMs who understand the problem</strong>.</p>
 
           <div class="about-tags">
-            <span class="about-tag">Product Management</span>
-            <span class="about-tag">AI Automation</span>
+            <span class="about-tag">Product Strategy</span>
+            <span class="about-tag">Customer Discovery</span>
+            <span class="about-tag">Roadmap Ownership</span>
+            <span class="about-tag">Cross-org Influence</span>
+            <span class="about-tag">Data-Informed Decisions</span>
+            <span class="about-tag">Platform Thinking</span>
+            <span class="about-tag">Stakeholder Negotiation</span>
             <span class="about-tag">Developer Platforms</span>
+            <span class="about-tag">AI &amp; Automation</span>
             <span class="about-tag">Open Source</span>
-            <span class="about-tag">Data Engineering</span>
-            <span class="about-tag">Microsoft Advocate</span>
-            <span class="about-tag">LinkedIn Top Voice</span>
-            <span class="about-tag">Conference Speaker</span>
-            <span class="about-tag">INSEAD</span>
-            <span class="about-tag">Solo Travel</span>
           </div>
         </div>
 
@@ -2280,29 +2341,29 @@
     <div class="section-container">
       <div class="section-header reveal">
         <div class="section-label">By the Numbers</div>
-        <h2 class="section-title">Impact in public view.</h2>
+        <h2 class="section-title">Impact at scale.</h2>
       </div>
 
       <div class="metrics-grid">
         <div class="metric-card reveal reveal-delay-1">
-          <div class="metric-number" data-target="6000" data-suffix="+">0</div>
-          <div class="metric-label">GitHub Issues Managed</div>
-          <div class="metric-sublabel">OfficeDev ecosystem</div>
+          <div class="metric-number" data-target="350" data-suffix=" PB">0</div>
+          <div class="metric-label">Daily Data Scale</div>
+          <div class="metric-sublabel">1P connector throughput</div>
         </div>
         <div class="metric-card reveal reveal-delay-2">
-          <div class="metric-number" data-target="50" data-suffix="+">0</div>
-          <div class="metric-label">Automations Built</div>
-          <div class="metric-sublabel">Python · PowerShell · KQL</div>
+          <div class="metric-number" data-target="20" data-suffix="x">0</div>
+          <div class="metric-label">OSS Connector Growth</div>
+          <div class="metric-sublabel">40 PB/day volume</div>
         </div>
         <div class="metric-card reveal reveal-delay-3">
-          <div class="metric-number" data-target="27" data-suffix="">0</div>
-          <div class="metric-label">Copilot Skills Authored</div>
-          <div class="metric-sublabel">Skill-as-Markdown</div>
+          <div class="metric-number" data-target="11" data-suffix="+ yrs">0</div>
+          <div class="metric-label">Shipping at Microsoft</div>
+          <div class="metric-sublabel">Azure · Fabric · Office</div>
         </div>
         <div class="metric-card reveal reveal-delay-4">
-          <div class="metric-number" data-target="37" data-suffix="">0</div>
-          <div class="metric-label">Stars on 365daysofADX</div>
-          <div class="metric-sublabel">Community recognition</div>
+          <div class="metric-number" data-target="6000" data-suffix="+">0</div>
+          <div class="metric-label">Issues Triaged</div>
+          <div class="metric-sublabel">OfficeDev ecosystem</div>
         </div>
       </div>
     </div>
@@ -2311,49 +2372,64 @@
   <!-- ═══════════════════════════════════════════════════════════
        JOURNEY
        ═══════════════════════════════════════════════════════════ -->
-  <section class="journey" id="journey">
+    <section class="journey" id="journey">
     <div class="section-container">
       <div class="section-header reveal">
         <div class="section-label">Journey</div>
-        <h2 class="section-title">Three chapters. One thread: build what’s missing.</h2>
+        <h2 class="section-title">Four chapters. One thread: build what’s missing.</h2>
       </div>
 
       <div class="journey-timeline">
         <div class="journey-item reveal reveal-delay-1">
           <div class="journey-dot"></div>
-          <div class="journey-era">2014 — CHAPTER 1</div>
-          <div class="journey-role">Cloud Engineering &amp; Operations</div>
+          <div class="journey-era">2013 — THE SPARK</div>
+          <div class="journey-role">Microsoft Intern · Cognitive Services &amp; Yammer</div>
           <div class="journey-org">Microsoft · India</div>
-          <div class="journey-desc">Started as a Program Manager building cloud infrastructure and supply chain systems. Learned to ship at scale, lead cross-functional teams, and develop a product mindset from day one.</div>
+          <div class="journey-desc">Built a sentiment analysis engine using Microsoft Cognitive Services and integrated Yammer with TFS for real-time team feedback. Improved internal team satisfaction scores by 10x. First taste of shipping product at Microsoft scale.</div>
           <div class="journey-highlights">
-            <span class="journey-highlight">Cloud Infrastructure</span>
-            <span class="journey-highlight">Led 15+ Engineers</span>
+            <span class="journey-highlight">Cognitive Services</span>
+            <span class="journey-highlight">10x Satisfaction</span>
           </div>
         </div>
 
         <div class="journey-item reveal reveal-delay-2">
           <div class="journey-dot"></div>
-          <div class="journey-era">2022 — CHAPTER 2</div>
+          <div class="journey-era">2014–2021 — CHAPTER 1</div>
+          <div class="journey-role">Data &amp; AI Consultant · Full-Stack Delivery</div>
+          <div class="journey-org">Microsoft · Global (India, US, Europe)</div>
+          <div class="journey-desc">Led engineering teams across 3 countries. Built a blockchain data platform that eliminated 98% of fraudulent transactions. Negotiated $2M in Azure migration budgets with enterprise leadership. Architected the Connected Vehicle Platform monitoring 20 million vehicles with 15x data ingress improvement.</div>
+          <div class="journey-highlights">
+            <span class="journey-highlight">98% Fraud Eliminated</span>
+            <span class="journey-highlight">$2M Budget Negotiated</span>
+            <span class="journey-highlight">20M Vehicles</span>
+            <span class="journey-highlight">Led Teams Across 3 Countries</span>
+          </div>
+        </div>
+
+        <div class="journey-item reveal reveal-delay-3">
+          <div class="journey-dot"></div>
+          <div class="journey-era">2021–2025 — CHAPTER 2</div>
           <div class="journey-role">Azure Data Explorer (Kusto) &amp; Eventhouse in RTI Fabric</div>
           <div class="journey-org">Microsoft · Azure Data</div>
-          <div class="journey-desc">Became "kustonaut." Deep-dived into KQL, data engineering, and analytics at petabyte scale. Drove Eventhouse in Real-Time Intelligence for Microsoft Fabric. Completed a 365-day public KQL challenge. Built open-source tooling that earned 37+ GitHub stars.</div>
+          <div class="journey-desc">Became “kustonaut.” Owned the ingestion connector ecosystem — grew OSS volume 20x to 40 PB/day and 1P connectors 4x to 350 PB/day. Maintained NPS above 9. Drove Eventhouse in Real-Time Intelligence for Microsoft Fabric. Completed a 365-day public KQL challenge.</div>
           <div class="journey-highlights">
-            <span class="journey-highlight">365daysofADX ★ 37</span>
-            <span class="journey-highlight">KQL Cheat Sheet ★ 11</span>
+            <span class="journey-highlight">20x OSS Growth</span>
+            <span class="journey-highlight">350 PB/Day 1P Scale</span>
+            <span class="journey-highlight">NPS &gt; 9</span>
             <span class="journey-highlight">Eventhouse · RTI Fabric</span>
           </div>
         </div>
 
-        <div class="journey-item current reveal reveal-delay-3">
+        <div class="journey-item current reveal reveal-delay-4">
           <div class="journey-dot"></div>
-          <div class="journey-era">2026 — CHAPTER 3</div>
+          <div class="journey-era">2025–NOW — CHAPTER 3</div>
           <div class="journey-role">Office Extensibility &amp; Developer Experience</div>
           <div class="journey-org">Microsoft · India</div>
-          <div class="journey-desc">Took ownership of developer reliability for the Office Add-ins ecosystem. Leading cross-team partner programs and the full developer support pipeline. Side project: building Brain OS — an open-source, AI-powered operating system for PMs with 27 Copilot skills and 50+ automations.</div>
+          <div class="journey-desc">Owns developer reliability for the Office Add-ins platform — 6,000+ issues triaged across 5 charter areas. Leading cross-team partner programs. Building Brain OS — an AI-powered daily operating system for PMs with 27 Copilot skills and 50+ automations.</div>
           <div class="journey-highlights">
-            <span class="journey-highlight">Platform Scale</span>
-            <span class="journey-highlight">Developer Reliability</span>
-            <span class="journey-highlight">Brain OS (Side Project)</span>
+            <span class="journey-highlight">6,000+ Issues Triaged</span>
+            <span class="journey-highlight">5 Charter Areas</span>
+            <span class="journey-highlight">Brain OS</span>
             <span class="journey-highlight">27 Copilot Skills</span>
           </div>
         </div>
@@ -2368,8 +2444,8 @@
     <div class="section-container">
       <div class="section-header reveal">
         <div class="section-label">Projects</div>
-        <h2 class="section-title">Tools I built because nothing else worked.</h2>
-        <p class="section-desc">Each project started from a real problem. Not a tutorial. Not a weekend hack. A genuine wall I hit at work.</p>
+        <h2 class="section-title">Products I built. Problems I solved.</h2>
+        <p class="section-desc">Every project started from a real product gap — something I needed at work that didn’t exist. Each one ships daily.</p>
       </div>
 
       <div class="projects-grid">
@@ -2383,7 +2459,7 @@
             </div>
             <h3 class="project-name">Brain OS</h3>
             <p class="project-desc">
-              AI-powered daily operating system for Product Managers. Fetches signals from email, Teams, ADO, and GitHub. Generates daily intelligence briefs. 27 Copilot skills. Runs on VS Code.
+              AI-powered daily operating system that reduced PM context-switch overhead from 2 hours to 90 seconds. Pulls signals from email, Teams, ADO, and GitHub. 27 Copilot skills. 50+ automations. Ships daily.
             </p>
             <p class="project-pitch">
               "I was spending 2 hours each morning context-switching between 6 tools. Now my AI does it in 90 seconds."
@@ -2642,70 +2718,70 @@
   <section id="stack">
     <div class="section-container">
       <div class="section-header reveal">
-        <div class="section-label">Stack</div>
-        <h2 class="section-title">What I work with daily.</h2>
+        <div class="section-label">PM Toolkit</div>
+        <h2 class="section-title">Tools that power the product work.</h2>
       </div>
 
       <div class="stack-grid">
         <div class="stack-item reveal reveal-delay-1">
-          <div class="stack-icon">🐍</div>
-          <div class="stack-name">Python</div>
-          <div class="stack-category">Primary</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-1">
-          <div class="stack-icon">⚡</div>
-          <div class="stack-name">PowerShell</div>
-          <div class="stack-category">Automation</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-2">
-          <div class="stack-icon">🔍</div>
-          <div class="stack-name">KQL</div>
-          <div class="stack-category">Data</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-2">
-          <div class="stack-icon">🤖</div>
-          <div class="stack-name">GitHub Copilot</div>
-          <div class="stack-category">AI</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-3">
-          <div class="stack-icon">🧠</div>
-          <div class="stack-name">GPT-4o / Claude</div>
-          <div class="stack-category">LLMs</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-3">
-          <div class="stack-icon">📊</div>
-          <div class="stack-name">Azure Data Explorer</div>
-          <div class="stack-category">Analytics</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-4">
-          <div class="stack-icon">🔗</div>
-          <div class="stack-name">Microsoft Graph</div>
-          <div class="stack-category">Platform</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-4">
           <div class="stack-icon">📋</div>
           <div class="stack-name">Azure DevOps</div>
-          <div class="stack-category">Planning</div>
+          <div class="stack-category">Discovery &amp; Planning</div>
+        </div>
+        <div class="stack-item reveal reveal-delay-1">
+          <div class="stack-icon">🔍</div>
+          <div class="stack-name">KQL / Kusto</div>
+          <div class="stack-category">Discovery &amp; Data</div>
+        </div>
+        <div class="stack-item reveal reveal-delay-2">
+          <div class="stack-icon">📊</div>
+          <div class="stack-name">Power BI / Excel</div>
+          <div class="stack-category">Strategy &amp; Analytics</div>
+        </div>
+        <div class="stack-item reveal reveal-delay-2">
+          <div class="stack-icon">📝</div>
+          <div class="stack-name">Spec Writing</div>
+          <div class="stack-category">Strategy</div>
+        </div>
+        <div class="stack-item reveal reveal-delay-3">
+          <div class="stack-icon">🐍</div>
+          <div class="stack-name">Python</div>
+          <div class="stack-category">Execution</div>
+        </div>
+        <div class="stack-item reveal reveal-delay-3">
+          <div class="stack-icon">⚡</div>
+          <div class="stack-name">PowerShell</div>
+          <div class="stack-category">Execution</div>
+        </div>
+        <div class="stack-item reveal reveal-delay-4">
+          <div class="stack-icon">🤖</div>
+          <div class="stack-name">GitHub Copilot</div>
+          <div class="stack-category">Intelligence</div>
+        </div>
+        <div class="stack-item reveal reveal-delay-4">
+          <div class="stack-icon">🧠</div>
+          <div class="stack-name">GPT-4o / Claude</div>
+          <div class="stack-category">Intelligence</div>
+        </div>
+        <div class="stack-item reveal reveal-delay-5">
+          <div class="stack-icon">🔗</div>
+          <div class="stack-name">Microsoft Graph</div>
+          <div class="stack-category">Intelligence</div>
         </div>
         <div class="stack-item reveal reveal-delay-5">
           <div class="stack-icon">💻</div>
           <div class="stack-name">VS Code</div>
-          <div class="stack-category">Editor</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-5">
-          <div class="stack-icon">🐙</div>
-          <div class="stack-name">GitHub Actions</div>
-          <div class="stack-category">CI/CD</div>
+          <div class="stack-category">Execution</div>
         </div>
         <div class="stack-item reveal reveal-delay-6">
-          <div class="stack-icon">📝</div>
-          <div class="stack-name">Markdown</div>
-          <div class="stack-category">Docs</div>
+          <div class="stack-icon">🐙</div>
+          <div class="stack-name">GitHub Actions</div>
+          <div class="stack-category">Execution</div>
         </div>
         <div class="stack-item reveal reveal-delay-6">
           <div class="stack-icon">🎨</div>
           <div class="stack-name">HTML / CSS / JS</div>
-          <div class="stack-category">Web</div>
+          <div class="stack-category">Execution</div>
         </div>
       </div>
     </div>
@@ -2724,23 +2800,23 @@
       <div class="philosophy-grid">
         <div class="philosophy-card reveal reveal-delay-1">
           <div class="philosophy-number">01</div>
-          <h3 class="philosophy-title">Build what you need.</h3>
+          <h3 class="philosophy-title">Outcomes over output.</h3>
           <p class="philosophy-text">
-            Not what looks good on a portfolio. Not what gets likes on Twitter. If I don't use it daily, I don't build it. Every repo here solves a problem I actually have.
+            Track what changed for the customer, not what you shipped. Features don’t matter. Customer outcomes do. Every metric I track ties back to a user problem solved.
           </p>
         </div>
         <div class="philosophy-card reveal reveal-delay-2">
           <div class="philosophy-number">02</div>
-          <h3 class="philosophy-title">Ship fast. Iterate faster.</h3>
+          <h3 class="philosophy-title">Strategy is a bet, not a plan.</h3>
           <p class="philosophy-text">
-            My code ships before my slides. I'd rather deploy a rough v1 today than polish a perfect v1 next month. Done beats perfect. Every time.
+            Fire bullets before cannonballs. Test hypotheses with lightweight automation before committing to platform investments. Every spec is a falsifiable bet.
           </p>
         </div>
         <div class="philosophy-card reveal reveal-delay-3">
           <div class="philosophy-number">03</div>
           <h3 class="philosophy-title">Systems over goals.</h3>
           <p class="philosophy-text">
-            I don't set targets. I build systems that make hitting targets inevitable. Brain OS isn't a productivity tool. It's a system that compounds intelligence daily.
+            Goals tell you where to go. Systems get you there. Brain OS isn’t a productivity tool — it’s a system that compounds PM intelligence daily. Build the machine, not the todo list.
           </p>
         </div>
       </div>
@@ -2962,6 +3038,7 @@
         <button class="recs-tab" data-tab="docs">📄 Docs</button>
         <button class="recs-tab" data-tab="courses">🎓 Courses</button>
         <button class="recs-tab" data-tab="videos">🎬 Videos</button>
+        <button class="recs-tab" data-tab="pm-canon">🎯 PM Canon</button>
       </div>
 
       <!-- BOOKS -->
@@ -3162,6 +3239,51 @@
 
       </div>
 
+      <!-- PM CANON -->
+      <div class="recs-panel" data-panel="pm-canon">
+
+        <div class="book-card reveal">
+          <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/9781119047636-M.jpg" alt="Inspired cover" loading="lazy" />
+          <div class="book-info">
+            <div class="book-title">Inspired</div>
+            <div class="book-author">Marty Cagan</div>
+            <div class="book-blurb">The PM bible. Discovery over delivery. Empowered product teams over feature factories. Changed how I define what “done” means.</div>
+            <div class="book-takeaway">“Fall in love with the problem, not the solution.”</div>
+          </div>
+        </div>
+
+        <div class="book-card reveal">
+          <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/9781119691297-M.jpg" alt="Empowered cover" loading="lazy" />
+          <div class="book-info">
+            <div class="book-title">Empowered</div>
+            <div class="book-author">Marty Cagan &amp; Chris Jones</div>
+            <div class="book-blurb">The leadership sequel. How to build product organizations that actually innovate. The gap between feature teams and empowered teams is the gap between IC4 and IC6.</div>
+            <div class="book-takeaway">“The best product teams are missionaries, not mercenaries.”</div>
+          </div>
+        </div>
+
+        <div class="book-card reveal">
+          <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/9780063270886-M.jpg" alt="Transformed cover" loading="lazy" />
+          <div class="book-info">
+            <div class="book-title">Transformed</div>
+            <div class="book-author">Marty Cagan</div>
+            <div class="book-blurb">How companies actually make the transformation to being product-led. The playbook for moving from project-mode to product-mode. Directly applicable to any IC trying to shift their org.</div>
+            <div class="book-takeaway">“Product model companies solve problems. IT-mindset companies build features.”</div>
+          </div>
+        </div>
+
+        <div class="book-card reveal">
+          <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/9781118960875-M.jpg" alt="Measure What Matters cover" loading="lazy" />
+          <div class="book-info">
+            <div class="book-title">Measure What Matters</div>
+            <div class="book-author">John Doerr</div>
+            <div class="book-blurb">OKRs done right. Not the HR exercise, but the alignment tool. This is how I connect daily work to quarterly impact and make Goals.md actually mean something.</div>
+            <div class="book-takeaway">“Ideas are easy. Execution is everything.”</div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
@@ -3172,9 +3294,9 @@
     <div class="section-container">
       <div class="connect-content reveal">
         <div class="section-label" style="justify-content: center;">Connect</div>
-        <h2 class="connect-title">Let's build something.</h2>
+        <h2 class="connect-title">Let’s talk product.</h2>
         <p class="connect-desc">
-          PM tooling, AI automation, KQL deep-dives, or building things that shouldn't work but do. Always up for it.
+          Product strategy, developer ecosystems, data platforms at scale, or AI-powered PM systems. Always up for a conversation about building what matters.
         </p>
         <div class="connect-links">
           <a href="https://github.com/kustonaut" target="_blank" rel="noopener" class="connect-link">
@@ -3209,13 +3331,13 @@
   <script>
     // ─── Typing Animation ────────────────────────────────────
     const phrases = [
-      'PM who codes.',
-      'Ships tools before slides.',
-      'Built an OS for PMs.',
-      '11 years. Still shipping.',
-      'Data over opinions.',
+      'Products over projects.',
+      'Strategy through execution.',
+      '350 PB daily. Still scaling.',
+      'Customer signal → product roadmap.',
+      'Build what scales.',
       'From Kusto to Copilot.',
-      'Automate everything.',
+      '11 years. Still shipping.',
     ];
 
     const typingEl = document.getElementById('typingText');
@@ -3364,3 +3486,44 @@
   </script>
 </body>
 </html>
+  <!-- ═══════════════════════════════════════════════════════════
+       PRODUCT IMPACT
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="impact" id="impact">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <div class="section-label">Product Impact</div>
+        <h2 class="section-title">What I shipped. Why it mattered.</h2>
+      </div>
+
+      <div class="impact-grid">
+        <div class="impact-card reveal reveal-delay-1">
+          <div class="impact-what">OSS Connector Ecosystem</div>
+          <div class="impact-metric">20x volume growth → 40 PB/day</div>
+          <div class="impact-how">Drove adoption of 10+ connectors (Spark, OpenTelemetry, Kafka, Logstash, Fluent Bit). Market research, roadmap prioritization, partner enablement.</div>
+        </div>
+        <div class="impact-card reveal reveal-delay-2">
+          <div class="impact-what">1P Connector Scale</div>
+          <div class="impact-metric">4x growth → 350 PB/day</div>
+          <div class="impact-how">Scaled first-party data ingestion pipelines for Azure Data Explorer and Fabric RTI. Maintained NPS above 9 across the ecosystem.</div>
+        </div>
+        <div class="impact-card reveal reveal-delay-3">
+          <div class="impact-what">Blockchain Data Platform</div>
+          <div class="impact-metric">98% fraud elimination</div>
+          <div class="impact-how">Built end-to-end data platform with distributed ledger verification. Led engineering teams across 3 countries to deliver.</div>
+        </div>
+        <div class="impact-card reveal reveal-delay-4">
+          <div class="impact-what">Enterprise Migration</div>
+          <div class="impact-metric">$2M budget negotiated</div>
+          <div class="impact-how">Negotiated Azure migration budget with enterprise senior leadership. Managed stakeholder alignment across business and technical teams.</div>
+        </div>
+        <div class="impact-card reveal reveal-delay-5">
+          <div class="impact-what">Connected Vehicle Platform</div>
+          <div class="impact-metric">20M vehicles monitored</div>
+          <div class="impact-how">Architected telemetry monitoring platform with 15x data ingress improvement. Real-time fleet analytics at automotive scale.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
