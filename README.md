@@ -9,7 +9,7 @@ Personal portfolio of **Akshay Dixit** — Senior Product Manager at Microsoft w
 - **About** — Career narrative from cloud infrastructure to AI-first PM tooling
 - **By the Numbers** — 6,000+ GitHub issues managed, 50+ automations, 27 Copilot skills
 - **Journey** — Four chapters: Cloud Ops → Azure Data Explorer → Office Extensibility → PM Intelligence
-- **Projects** — Six open-source tools including [Brain OS](https://github.com/kustonaut/brain-os), [issue-sentinel](https://github.com/kustonaut/issue-sentinel), [365daysofADX](https://github.com/kustonaut/365daysofADX), and more
+- **Projects** — Six open-source tools including [Brain OS](https://github.com/kustonaut/brain-os), [issue-sentinel](https://github.com/kustonaut/issue-sentinel), [365daysofADX](https://kustonaut.github.io/365daysofADX/) ([repo](https://github.com/kustonaut/365daysofADX)), and more
 - **Writing** — Travel stories, work-life balance, and year-end reflections on [Medium](https://medium.com/@travelhogburn)
 - **Connect** — [GitHub](https://github.com/kustonaut) · [LinkedIn](https://www.linkedin.com/in/dixitakshay/) · [X](https://x.com/kustonaut) · [Medium](https://medium.com/@travelhogburn)
 
