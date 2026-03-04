@@ -1971,6 +1971,556 @@
     }
 
     /* ═══════════════════════════════════════════════════════════
+       GROWTH HUB — CAREER COACH
+       ═══════════════════════════════════════════════════════════ */
+    .nav-growth {
+      color: var(--accent-emerald) !important;
+      font-weight: 600;
+    }
+
+    #growth-hub {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gh-intro {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .gh-intro p {
+      max-width: 680px;
+      margin: 0.5rem auto 0;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .gh-coach-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Progress bar */
+    .gh-progress {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      align-items: center;
+    }
+
+    .gh-progress-step {
+      flex: 1;
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(255,255,255,0.08);
+      transition: background 0.4s ease;
+    }
+
+    .gh-progress-step.done {
+      background: var(--accent-emerald);
+    }
+
+    .gh-progress-step.active {
+      background: var(--accent-cyan);
+      box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+    }
+
+    .gh-progress-label {
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
+      font-family: var(--font-mono);
+      white-space: nowrap;
+      min-width: 80px;
+      text-align: right;
+    }
+
+    /* Question cards */
+    .gh-question-card {
+      display: none;
+      animation: ghFadeIn 0.4s ease;
+    }
+
+    .gh-question-card.active {
+      display: block;
+    }
+
+    @keyframes ghFadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .gh-q-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .gh-q-dimension {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-emerald);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .gh-q-text {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .gh-q-context {
+      font-size: 0.82rem;
+      color: var(--text-tertiary);
+      margin-top: 0.4rem;
+      line-height: 1.5;
+    }
+
+    .gh-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .gh-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .gh-option:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-card-hover);
+      transform: translateX(4px);
+    }
+
+    .gh-option.selected {
+      border-color: var(--accent-cyan);
+      background: rgba(0, 212, 255, 0.06);
+    }
+
+    .gh-option-level {
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+
+    .gh-option[data-level="1"] .gh-option-level {
+      background: rgba(239, 68, 68, 0.15);
+      color: #ef4444;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .gh-option[data-level="2"] .gh-option-level {
+      background: rgba(245, 158, 11, 0.15);
+      color: #f59e0b;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .gh-option[data-level="3"] .gh-option-level {
+      background: rgba(0, 212, 255, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+    }
+
+    .gh-option[data-level="4"] .gh-option-level {
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .gh-option-content {
+      flex: 1;
+    }
+
+    .gh-option-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.2rem;
+    }
+
+    .gh-option-desc {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Nav buttons */
+    .gh-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .gh-btn {
+      padding: 0.65rem 1.75rem;
+      border-radius: 100px;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+    }
+
+    .gh-btn-back {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .gh-btn-back:hover {
+      border-color: var(--text-tertiary);
+      color: var(--text-primary);
+    }
+
+    .gh-btn-next {
+      background: var(--gradient-primary);
+      color: var(--bg-primary);
+    }
+
+    .gh-btn-next:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0, 212, 255, 0.35);
+    }
+
+    .gh-btn-next:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .gh-counter {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      font-family: var(--font-mono);
+    }
+
+    /* ─── Results ─────────────────────────────── */
+    .gh-results {
+      display: none;
+      animation: ghFadeIn 0.6s ease;
+    }
+
+    .gh-results.active {
+      display: block;
+    }
+
+    .gh-results-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .gh-results-header h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .gh-results-header p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .gh-score-ring {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 2rem;
+      position: relative;
+    }
+
+    .gh-score-ring canvas {
+      width: 200px;
+      height: 200px;
+    }
+
+    .gh-score-ring-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .gh-score-ring-value {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    .gh-score-ring-subtitle {
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.2rem;
+    }
+
+    /* Radar chart */
+    .gh-radar-wrapper {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+      align-items: center;
+    }
+
+    .gh-radar-canvas {
+      flex-shrink: 0;
+    }
+
+    .gh-radar-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      flex: 1;
+    }
+
+    .gh-radar-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .gh-radar-legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .gh-radar-legend-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      flex: 1;
+    }
+
+    .gh-radar-legend-score {
+      font-size: 0.8rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+
+    /* Coaching cards */
+    .gh-coaching-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .gh-coaching-card {
+      padding: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      border-left: 3px solid;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .gh-coaching-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .gh-coaching-card.strength {
+      border-left-color: var(--accent-emerald);
+    }
+
+    .gh-coaching-card.gap {
+      border-left-color: #ef4444;
+    }
+
+    .gh-coaching-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      padding: 0.2rem 0.75rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+
+    .gh-coaching-card.strength .gh-coaching-badge {
+      background: rgba(34, 197, 94, 0.12);
+      color: var(--accent-emerald);
+    }
+
+    .gh-coaching-card.gap .gh-coaching-badge {
+      background: rgba(239, 68, 68, 0.12);
+      color: #ef4444;
+    }
+
+    .gh-coaching-dim {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .gh-coaching-shift {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .gh-coaching-shift .ic4 {
+      color: #ef4444;
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+
+    .gh-coaching-shift .ic5 {
+      color: var(--accent-emerald);
+      font-weight: 600;
+    }
+
+    .gh-coaching-action {
+      font-size: 0.78rem;
+      color: var(--accent-cyan);
+      font-weight: 500;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border);
+      margin-top: 0.5rem;
+    }
+
+    .gh-coaching-book {
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      font-style: italic;
+      margin-top: 0.4rem;
+    }
+
+    /* Level badge */
+    .gh-level-banner {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 2rem;
+    }
+
+    .gh-level-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      padding: 0.25rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+
+    .gh-level-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .gh-level-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Action plan */
+    .gh-action-plan {
+      padding: 1.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 2rem;
+    }
+
+    .gh-action-plan h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .gh-action-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .gh-action-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .gh-action-list li::before {
+      content: '→';
+      color: var(--accent-cyan);
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    .gh-restart {
+      display: block;
+      margin: 2rem auto 0;
+      padding: 0.65rem 2rem;
+      border-radius: 100px;
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .gh-restart:hover {
+      border-color: var(--border-hover);
+      color: var(--text-primary);
+    }
+
+    @media (max-width: 768px) {
+      .gh-radar-wrapper {
+        flex-direction: column;
+      }
+      .gh-coaching-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
        RESPONSIVE
        ═══════════════════════════════════════════════════════════ */
     @media (max-width: 1024px) {
@@ -2188,6 +2738,7 @@
         <li><a href="#writing">Writing</a></li>
         <li><a href="#linkedin">LinkedIn</a></li>
         <li><a href="#recommendations">Recs</a></li>
+        <li><a href="#growth-hub" class="nav-growth">Growth Hub</a></li>
         <li><a href="https://github.com/kustonaut" target="_blank" rel="noopener" class="nav-cta">GitHub →</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -3328,6 +3879,473 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
+       GROWTH HUB — CAREER COACH
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="growth-hub">
+    <div class="section-container">
+
+      <div class="gh-intro reveal">
+        <div class="section-header">
+          <div class="section-label"><span></span>Growth Hub</div>
+          <h2 class="section-title">PM Career Coach</h2>
+          <p class="section-desc">An interactive deep audit against the IC4→IC7 PM career ladder. Answer 10 questions honestly. Get a radar chart of your PM dimensions, your current IC level assessment, verb shift coaching, and a personalized action plan drawn from 65 books on leadership and product management.</p>
+        </div>
+      </div>
+
+      <div class="gh-coach-container reveal">
+
+        <!-- Progress bar -->
+        <div class="gh-progress" id="ghProgress">
+          <div class="gh-progress-label" id="ghProgressLabel">0 / 10</div>
+        </div>
+
+        <!-- Questions -->
+        <div id="ghQuestions">
+          <!-- Q1 -->
+          <div class="gh-question-card active" data-q="0">
+            <div class="gh-q-header">
+              <div class="gh-q-dimension">Dimension 1 · Ownership</div>
+              <div class="gh-q-text">When a feature spec needs writing, what do you do?</div>
+              <div class="gh-q-context">Ownership means you hold the pen, not just review what others wrote.</div>
+            </div>
+            <div class="gh-options">
+              <div class="gh-option" data-level="1" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC4</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Wait for someone to assign it or draft an outline</div>
+                  <div class="gh-option-desc">You contribute when asked but don't proactively pick up the pen.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="2" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC5</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Volunteer to write the first draft end-to-end</div>
+                  <div class="gh-option-desc">You own the spec from problem statement to acceptance criteria.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="3" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC6</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Write it AND set the framework others follow</div>
+                  <div class="gh-option-desc">You create templates and quality bars the team adopts for all specs.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="4" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC7</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Define the spec strategy across products</div>
+                  <div class="gh-option-desc">You shape how the org documents product decisions at scale.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="gh-question-card" data-q="1">
+            <div class="gh-q-header">
+              <div class="gh-q-dimension">Dimension 2 · Coaching</div>
+              <div class="gh-q-text">When a junior PM struggles with a decision, how do you respond?</div>
+              <div class="gh-q-context">Coaching means multiplying intelligence, not just giving answers.</div>
+            </div>
+            <div class="gh-options">
+              <div class="gh-option" data-level="1" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC4</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Point them to the right document or person</div>
+                  <div class="gh-option-desc">Helpful when asked, but don't invest in building their judgment.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="2" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC5</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Walk them through the tradeoff framework</div>
+                  <div class="gh-option-desc">You ask "what do you see?" before sharing your view — building their reasoning muscle.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="3" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC6</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Create a coaching structure for the team</div>
+                  <div class="gh-option-desc">You set up regular 1:1 coaching, shared decision logs, and peer review rituals.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="4" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC7</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Build an org-wide PM development program</div>
+                  <div class="gh-option-desc">You shape how PMs across the org grow, mentor mentors, and define career ladders.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="gh-question-card" data-q="2">
+            <div class="gh-q-header">
+              <div class="gh-q-dimension">Dimension 3 · Influence</div>
+              <div class="gh-q-text">How do you handle disagreements about technical tradeoffs with engineering?</div>
+              <div class="gh-q-context">Influence without authority is the PM superpower — data and framing beat title and escalation.</div>
+            </div>
+            <div class="gh-options">
+              <div class="gh-option" data-level="1" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC4</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Defer to the engineering lead's judgment</div>
+                  <div class="gh-option-desc">You trust the technical team's call without pushing back with data.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="2" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC5</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Present customer data and A/B options</div>
+                  <div class="gh-option-desc">You frame decisions with data, propose options with tradeoffs, and let the team decide with informed constraints.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="3" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC6</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Facilitate cross-team alignment on the tradeoff</div>
+                  <div class="gh-option-desc">You bring in partner teams, quantify cross-team impact, and drive a decision that considers the whole system.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="4" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC7</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Set the decision framework the org uses</div>
+                  <div class="gh-option-desc">You define how tech/product tradeoffs are evaluated org-wide, create rubrics, and shape investment strategy.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="gh-question-card" data-q="3">
+            <div class="gh-q-header">
+              <div class="gh-q-dimension">Dimension 4 · Cross-Divisional Impact</div>
+              <div class="gh-q-text">How does your work connect to teams outside your immediate product area?</div>
+              <div class="gh-q-context">Senior PMs think in systems. Your feature doesn't live in isolation.</div>
+            </div>
+            <div class="gh-options">
+              <div class="gh-option" data-level="1" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC4</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Rarely interact outside my pod</div>
+                  <div class="gh-option-desc">You focus on your feature area and handle cross-team needs when escalated.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="2" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC5</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Proactively sync with 2-3 partner teams</div>
+                  <div class="gh-option-desc">You understand dependencies and share context before problems arise.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="3" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC6</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Drive shared roadmap items across divisions</div>
+                  <div class="gh-option-desc">You co-own deliverables with PMs in other orgs and align at the GM level.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="4" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC7</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Shape multi-product strategy at the CVP level</div>
+                  <div class="gh-option-desc">You influence product portfolio decisions that span multiple business units.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="gh-question-card" data-q="4">
+            <div class="gh-q-header">
+              <div class="gh-q-dimension">Dimension 5 · Strategic Alignment</div>
+              <div class="gh-q-text">How do you connect your daily work to organizational OKRs?</div>
+              <div class="gh-q-context">Every line of spec should trace to an outcome. Strategic PMs never lose the thread.</div>
+            </div>
+            <div class="gh-options">
+              <div class="gh-option" data-level="1" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC4</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Focus on sprint tasks; OKRs are a quarterly check</div>
+                  <div class="gh-option-desc">You know the OKRs exist but don't actively map work to them daily.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="2" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC5</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Map every decision to a key result</div>
+                  <div class="gh-option-desc">Your specs cite which KR they advance. Your prioritization reflects the OKR stack rank.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="3" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC6</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Shape the OKRs themselves</div>
+                  <div class="gh-option-desc">You draft OKRs for your area, negotiate metric targets, and ensure they cascade correctly.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="4" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC7</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Set the strategic framework the org plans against</div>
+                  <div class="gh-option-desc">You define the north star metric, the planning cadence, and the strategy narrative for leadership.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="gh-question-card" data-q="5">
+            <div class="gh-q-header">
+              <div class="gh-q-dimension">Dimension 6 · Thought Leadership</div>
+              <div class="gh-q-text">How do people outside your immediate team know about your work?</div>
+              <div class="gh-q-context">If your best work is invisible, you're leaving career capital on the table. Ship AND show.</div>
+            </div>
+            <div class="gh-options">
+              <div class="gh-option" data-level="1" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC4</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">My work speaks for itself through the product</div>
+                  <div class="gh-option-desc">You don't actively share insights beyond standups and reviews.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="2" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC5</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Write internal posts and present at team all-hands</div>
+                  <div class="gh-option-desc">You share learnings, write brown-bag talks, and people come to you for opinions in your domain.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="3" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC6</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Publish externally and speak at conferences</div>
+                  <div class="gh-option-desc">You blog, give talks, and are recognized outside your company as a domain expert.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="4" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC7</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Shape industry thinking and are sought as an advisor</div>
+                  <div class="gh-option-desc">Your frameworks are cited by others. You keynote events or advise company strategy externally.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="gh-question-card" data-q="6">
+            <div class="gh-q-header">
+              <div class="gh-q-dimension">Dimension 7 · Data-Driven Decision Making</div>
+              <div class="gh-q-text">How do you use data in your product decisions?</div>
+              <div class="gh-q-context">Intuition gets you started. Data keeps you honest. The best PMs instrument everything.</div>
+            </div>
+            <div class="gh-options">
+              <div class="gh-option" data-level="1" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC4</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Request reports from analysts when needed</div>
+                  <div class="gh-option-desc">You use data when available but don't own the instrumentation or dashboards.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="2" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC5</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Build dashboards and write queries myself</div>
+                  <div class="gh-option-desc">You own your product's metrics, can query telemetry, and make data-driven tradeoffs daily.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="3" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC6</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Define the metrics framework for the area</div>
+                  <div class="gh-option-desc">You set what we measure, why, and how — creating the data culture for your product area.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="4" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC7</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Pioneer new measurement methodologies</div>
+                  <div class="gh-option-desc">You create novel metrics, build AI-powered analytics systems, or define industry standards for product telemetry.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="gh-question-card" data-q="7">
+            <div class="gh-q-header">
+              <div class="gh-q-dimension">Dimension 8 · Systems Thinking</div>
+              <div class="gh-q-text">When you encounter a recurring problem, what's your instinct?</div>
+              <div class="gh-q-context">IC5+ PMs don't just fix bugs — they fix the system that creates bugs.</div>
+            </div>
+            <div class="gh-options">
+              <div class="gh-option" data-level="1" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC4</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Fix the immediate issue and move on</div>
+                  <div class="gh-option-desc">You triage efficiently but don't always invest in root cause analysis.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="2" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC5</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Trace the root cause and build automation</div>
+                  <div class="gh-option-desc">You ask "why did this happen 3 times?" and build systems to prevent recurrence.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="3" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC6</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Design process improvements for the team</div>
+                  <div class="gh-option-desc">You create playbooks, triage pipelines, and health metrics that the whole team adopts.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="4" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC7</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Architect organizational systems at scale</div>
+                  <div class="gh-option-desc">You design how the entire org detects, triages, and resolves problems — processes that outlast any individual PM.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q9 -->
+          <div class="gh-question-card" data-q="8">
+            <div class="gh-q-header">
+              <div class="gh-q-dimension">Dimension 9 · Customer Empathy</div>
+              <div class="gh-q-text">How close are you to your customers and their pain?</div>
+              <div class="gh-q-context">If you haven't talked to a customer this week, you're managing a product you don't understand.</div>
+            </div>
+            <div class="gh-options">
+              <div class="gh-option" data-level="1" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC4</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Read CX reports and UserVoice votes</div>
+                  <div class="gh-option-desc">You know the top requests but haven't directly talked to users recently.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="2" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC5</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Talk to 3-5 customers monthly and synthesize patterns</div>
+                  <div class="gh-option-desc">You have a customer call rhythm, take structured notes, and track feedback themes.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="3" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC6</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Run a continuous discovery program</div>
+                  <div class="gh-option-desc">You've built a customer advisory board, run beta programs, and feedback shapes every sprint planning.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="4" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC7</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Shape multi-segment customer strategy</div>
+                  <div class="gh-option-desc">You define customer segmentation, engagement models, and journey maps that the entire product org leverages.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q10 -->
+          <div class="gh-question-card" data-q="9">
+            <div class="gh-q-header">
+              <div class="gh-q-dimension">Dimension 10 · Execution Velocity</div>
+              <div class="gh-q-text">How do you maintain momentum when a project hits ambiguity?</div>
+              <div class="gh-q-context">Shipping beats perfection. The War of Art's unnamed resistance shows up as "let me do one more review."</div>
+            </div>
+            <div class="gh-options">
+              <div class="gh-option" data-level="1" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC4</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Wait for clarity before proceeding</div>
+                  <div class="gh-option-desc">You want requirements locked before starting, which sometimes stalls progress.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="2" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC5</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Make reversible decisions quickly and iterate</div>
+                  <div class="gh-option-desc">You distinguish two-way from one-way doors. For two-way doors, you decide and move.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="3" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC6</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Create decision frameworks that accelerate the team</div>
+                  <div class="gh-option-desc">You set up RACI, pre-mortems, and escalation paths so ambiguity never blocks the team.</div>
+                </div>
+              </div>
+              <div class="gh-option" data-level="4" onclick="ghSelect(this)">
+                <div class="gh-option-level">IC7</div>
+                <div class="gh-option-content">
+                  <div class="gh-option-title">Define the org's operating rhythm and velocity culture</div>
+                  <div class="gh-option-desc">You shape how the entire product org ships — cadence, quality bars, go/no-go frameworks.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="gh-nav" id="ghNav">
+          <button class="gh-btn gh-btn-back" id="ghBack" onclick="ghPrev()" style="visibility:hidden;">&larr; Back</button>
+          <span class="gh-counter" id="ghCounter">1 of 10</span>
+          <button class="gh-btn gh-btn-next" id="ghNext" onclick="ghNext()" disabled>Next &rarr;</button>
+        </div>
+
+        <!-- Results (hidden until done) -->
+        <div class="gh-results" id="ghResults">
+          <div class="gh-results-header">
+            <h3>Your PM Career Audit</h3>
+            <p>Here's how you map across 10 PM dimensions — and how to level up.</p>
+          </div>
+
+          <!-- Score ring -->
+          <div class="gh-score-ring">
+            <canvas id="ghScoreCanvas" width="200" height="200"></canvas>
+            <div class="gh-score-ring-label">
+              <div class="gh-score-ring-value" id="ghScoreValue">--</div>
+              <div class="gh-score-ring-subtitle" id="ghScoreLevel">--</div>
+            </div>
+          </div>
+
+          <!-- Level banner -->
+          <div class="gh-level-banner" id="ghLevelBanner">
+            <div class="gh-level-tag" id="ghLevelTag">--</div>
+            <div class="gh-level-title" id="ghLevelTitle">--</div>
+            <div class="gh-level-desc" id="ghLevelDesc">--</div>
+          </div>
+
+          <!-- Radar chart -->
+          <div class="gh-radar-wrapper">
+            <canvas class="gh-radar-canvas" id="ghRadar" width="320" height="320"></canvas>
+            <div class="gh-radar-legend" id="ghRadarLegend"></div>
+          </div>
+
+          <!-- Coaching cards -->
+          <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 1rem;">Personalized Coaching</h4>
+          <div class="gh-coaching-grid" id="ghCoachingGrid"></div>
+
+          <!-- Action plan -->
+          <div class="gh-action-plan" id="ghActionPlan">
+            <h4>🎯 Your Action Plan — Try This Week</h4>
+            <ul class="gh-action-list" id="ghActionList"></ul>
+          </div>
+
+          <button class="gh-restart" onclick="ghRestart()">↻ Retake Assessment</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
        CONNECT
        ═══════════════════════════════════════════════════════════ -->
   <section class="connect" id="connect">
@@ -3523,6 +4541,329 @@
         document.querySelector(`.recs-panel[data-panel="${tab.dataset.tab}"]`).classList.add('active');
       });
     });
+
+    // ═══════════════════════════════════════════════════════════
+    //  GROWTH HUB — CAREER COACH ENGINE
+    // ═══════════════════════════════════════════════════════════
+    const GH_TOTAL = 10;
+    const GH_DIMENSIONS = [
+      'Ownership', 'Coaching', 'Influence', 'Cross-Divisional Impact',
+      'Strategic Alignment', 'Thought Leadership', 'Data-Driven Decisions',
+      'Systems Thinking', 'Customer Empathy', 'Execution Velocity'
+    ];
+
+    // Anti-pattern verb shifts (IC4 trap → IC5 upgrade)
+    const GH_VERB_SHIFTS = {
+      'Ownership':             { ic4: 'Waited to be assigned', ic5: 'Volunteered and owned the pen' },
+      'Coaching':              { ic4: 'Gave the answer directly', ic5: 'Asked "what do you see?" first' },
+      'Influence':             { ic4: 'Deferred to authority', ic5: 'Led with data and options' },
+      'Cross-Divisional Impact':{ ic4: 'Stayed in my pod', ic5: 'Synced with partner teams proactively' },
+      'Strategic Alignment':   { ic4: 'Treated OKRs as quarterly admin', ic5: 'Mapped every decision to a key result' },
+      'Thought Leadership':    { ic4: 'Let work speak for itself', ic5: 'Wrote internal posts and presented learnings' },
+      'Data-Driven Decisions': { ic4: 'Requested reports when needed', ic5: 'Built dashboards and queried data directly' },
+      'Systems Thinking':      { ic4: 'Fixed the bug and moved on', ic5: 'Traced root cause and built prevention systems' },
+      'Customer Empathy':      { ic4: 'Read CX reports secondhand', ic5: 'Talked to 3-5 customers monthly' },
+      'Execution Velocity':    { ic4: 'Waited for full clarity', ic5: 'Made reversible decisions fast and iterated' }
+    };
+
+    // Book framework coaching
+    const GH_BOOK_COACHING = {
+      'Ownership':             { book: 'Extreme Ownership — Jocko Willink', tip: 'Write one spec this week without being asked. Own the outcome end-to-end.' },
+      'Coaching':              { book: 'Multipliers — Liz Wiseman', tip: 'In your next 1:1, ask 3 questions before sharing your opinion.' },
+      'Influence':             { book: 'Never Split the Difference — Chris Voss', tip: 'Before your next tradeoff meeting, prepare a 1-page options doc with data backing each path.' },
+      'Cross-Divisional Impact':{ book: 'High Output Management — Andy Grove', tip: 'Schedule a 30-min sync with a partner team PM you\'ve never met.' },
+      'Strategic Alignment':   { book: 'Measure What Matters — John Doerr', tip: 'Add a "KR Connection" field to your next spec template.' },
+      'Thought Leadership':    { book: 'Show Your Work — Austin Kleon', tip: 'Write a 500-word internal post about something you shipped this month.' },
+      'Data-Driven Decisions': { book: 'Lean Analytics — Alistair Croll', tip: 'Build one dashboard this week for your top feature metric.' },
+      'Systems Thinking':      { book: 'Thinking in Systems — Donella Meadows', tip: 'For your next bug triage, draw the system loop that creates the problem.' },
+      'Customer Empathy':      { book: 'The Mom Test — Rob Fitzpatrick', tip: 'Book one customer call this week. Ask about their last frustrating experience, not feature requests.' },
+      'Execution Velocity':    { book: 'Rework — Jason Fried', tip: 'Identify one decision you\'ve been stalling on. Make it today and note it\'s reversible.' }
+    };
+
+    let ghAnswers = new Array(GH_TOTAL).fill(0);
+    let ghCurrent = 0;
+
+    function ghInitProgress() {
+      const bar = document.getElementById('ghProgress');
+      // clear existing steps (keep label)
+      bar.querySelectorAll('.gh-progress-step').forEach(s => s.remove());
+      const label = document.getElementById('ghProgressLabel');
+      for (let i = 0; i < GH_TOTAL; i++) {
+        const step = document.createElement('div');
+        step.className = 'gh-progress-step' + (i === 0 ? ' active' : '');
+        bar.insertBefore(step, label);
+      }
+    }
+
+    function ghUpdateProgress() {
+      const steps = document.querySelectorAll('.gh-progress-step');
+      steps.forEach((s, i) => {
+        s.classList.remove('active', 'done');
+        if (i < ghCurrent) s.classList.add('done');
+        if (i === ghCurrent) s.classList.add('active');
+      });
+      document.getElementById('ghProgressLabel').textContent = `${ghCurrent + 1} / ${GH_TOTAL}`;
+      document.getElementById('ghCounter').textContent = `${ghCurrent + 1} of ${GH_TOTAL}`;
+    }
+
+    function ghSelect(el) {
+      const card = el.closest('.gh-question-card');
+      card.querySelectorAll('.gh-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      ghAnswers[ghCurrent] = parseInt(el.dataset.level);
+      document.getElementById('ghNext').disabled = false;
+    }
+
+    function ghShowCard(idx) {
+      document.querySelectorAll('.gh-question-card').forEach(c => c.classList.remove('active'));
+      const card = document.querySelector(`.gh-question-card[data-q="${idx}"]`);
+      if (card) card.classList.add('active');
+      document.getElementById('ghBack').style.visibility = idx === 0 ? 'hidden' : 'visible';
+      // check if this question already has a selection
+      const selected = card && card.querySelector('.gh-option.selected');
+      document.getElementById('ghNext').disabled = !selected;
+      // update button label on last question
+      document.getElementById('ghNext').textContent = idx === GH_TOTAL - 1 ? 'See Results →' : 'Next →';
+    }
+
+    function ghNext() {
+      if (ghAnswers[ghCurrent] === 0) return;
+      if (ghCurrent < GH_TOTAL - 1) {
+        ghCurrent++;
+        ghShowCard(ghCurrent);
+        ghUpdateProgress();
+      } else {
+        ghShowResults();
+      }
+    }
+
+    function ghPrev() {
+      if (ghCurrent > 0) {
+        ghCurrent--;
+        ghShowCard(ghCurrent);
+        ghUpdateProgress();
+      }
+    }
+
+    function ghShowResults() {
+      document.getElementById('ghQuestions').style.display = 'none';
+      document.getElementById('ghNav').style.display = 'none';
+      document.getElementById('ghProgress').style.display = 'none';
+      document.getElementById('ghResults').classList.add('active');
+
+      const avg = ghAnswers.reduce((a, b) => a + b, 0) / GH_TOTAL;
+      const pct = Math.round((avg / 4) * 100);
+
+      // Score ring
+      ghDrawScoreRing(pct);
+      document.getElementById('ghScoreValue').textContent = pct;
+
+      // Determine level
+      let level, levelName, levelDesc, levelColor;
+      if (avg <= 1.5) {
+        level = 'IC4'; levelName = 'IC4 — Growing PM';
+        levelDesc = 'You\'re building foundational skills. Focus on owning deliverables, writing specs without being asked, and replacing "I helped" with "I drove."';
+        levelColor = '#ef4444';
+      } else if (avg <= 2.5) {
+        level = 'IC5'; levelName = 'IC5 — Senior PM';
+        levelDesc = 'You own outcomes and influence without authority. Keep pushing into cross-team impact and thought leadership to break through to principal.';
+        levelColor = '#f59e0b';
+      } else if (avg <= 3.3) {
+        level = 'IC6'; levelName = 'IC6 — Principal PM';
+        levelDesc = 'You shape strategy, build systems, and multiply the team. Your next frontier: org-wide impact, industry recognition, and multi-product vision.';
+        levelColor = '#00d4ff';
+      } else {
+        level = 'IC7'; levelName = 'IC7 — Distinguished PM';
+        levelDesc = 'You operate at the highest level — shaping industries, defining frameworks others follow, and building things that outlast you.';
+        levelColor = '#22c55e';
+      }
+
+      document.getElementById('ghScoreLevel').textContent = level;
+      document.getElementById('ghLevelTag').textContent = level;
+      document.getElementById('ghLevelTag').style.background = levelColor + '22';
+      document.getElementById('ghLevelTag').style.color = levelColor;
+      document.getElementById('ghLevelTitle').textContent = levelName;
+      document.getElementById('ghLevelDesc').textContent = levelDesc;
+
+      // Radar chart
+      ghDrawRadar(ghAnswers);
+
+      // Build legend
+      const legend = document.getElementById('ghRadarLegend');
+      legend.innerHTML = '';
+      const colors = ghRadarColors();
+      GH_DIMENSIONS.forEach((dim, i) => {
+        const score = ghAnswers[i];
+        const color = score <= 1 ? '#ef4444' : score <= 2 ? '#f59e0b' : score <= 3 ? '#00d4ff' : '#22c55e';
+        legend.innerHTML += `
+          <div class="gh-radar-legend-item">
+            <div class="gh-radar-legend-dot" style="background: ${color};"></div>
+            <div class="gh-radar-legend-label">${dim}</div>
+            <div class="gh-radar-legend-score" style="color: ${color};">${score}/4</div>
+          </div>`;
+      });
+
+      // Coaching cards — sort by score (lowest first = biggest gaps)
+      const ranked = GH_DIMENSIONS.map((d, i) => ({ dim: d, score: ghAnswers[i], idx: i }))
+        .sort((a, b) => a.score - b.score);
+
+      const coachGrid = document.getElementById('ghCoachingGrid');
+      coachGrid.innerHTML = '';
+
+      ranked.forEach(r => {
+        const isGap = r.score <= 2;
+        const shift = GH_VERB_SHIFTS[r.dim];
+        const book = GH_BOOK_COACHING[r.dim];
+        coachGrid.innerHTML += `
+          <div class="gh-coaching-card ${isGap ? 'gap' : 'strength'}">
+            <div class="gh-coaching-badge">${isGap ? 'Growth Area' : 'Strength'}</div>
+            <div class="gh-coaching-dim">${r.dim} <span style="opacity:0.5;font-size:0.8rem;">(${r.score}/4)</span></div>
+            <div class="gh-coaching-shift">
+              <span class="ic4">${shift.ic4}</span> → <span class="ic5">${shift.ic5}</span>
+            </div>
+            <div class="gh-coaching-action">💡 ${book.tip}</div>
+            <div class="gh-coaching-book">📚 ${book.book}</div>
+          </div>`;
+      });
+
+      // Action plan — top 3 gaps
+      const gaps = ranked.filter(r => r.score <= 2).slice(0, 3);
+      const actions = document.getElementById('ghActionList');
+      actions.innerHTML = '';
+      if (gaps.length === 0) {
+        actions.innerHTML = '<li>You\'re operating at a high level across all dimensions. Pick one area to push from "good" to "exceptional" this week.</li>';
+      } else {
+        gaps.forEach(g => {
+          const book = GH_BOOK_COACHING[g.dim];
+          actions.innerHTML += `<li><strong>${g.dim}:</strong> ${book.tip} <em>(${book.book})</em></li>`;
+        });
+      }
+    }
+
+    function ghDrawScoreRing(pct) {
+      const canvas = document.getElementById('ghScoreCanvas');
+      const ctx = canvas.getContext('2d');
+      const cx = 100, cy = 100, r = 80, lw = 10;
+      ctx.clearRect(0, 0, 200, 200);
+
+      // Background ring
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+      ctx.lineWidth = lw;
+      ctx.stroke();
+
+      // Score arc
+      const angle = (pct / 100) * Math.PI * 2;
+      const gradient = ctx.createLinearGradient(0, 0, 200, 200);
+      gradient.addColorStop(0, '#00d4ff');
+      gradient.addColorStop(1, '#7c3aed');
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, -Math.PI / 2, -Math.PI / 2 + angle);
+      ctx.strokeStyle = gradient;
+      ctx.lineWidth = lw;
+      ctx.lineCap = 'round';
+      ctx.stroke();
+    }
+
+    function ghRadarColors() {
+      return ghAnswers.map(s => s <= 1 ? '#ef4444' : s <= 2 ? '#f59e0b' : s <= 3 ? '#00d4ff' : '#22c55e');
+    }
+
+    function ghDrawRadar(scores) {
+      const canvas = document.getElementById('ghRadar');
+      const ctx = canvas.getContext('2d');
+      const cx = 160, cy = 160, maxR = 130;
+      const n = scores.length;
+      ctx.clearRect(0, 0, 320, 320);
+
+      // Draw concentric rings (4 levels)
+      for (let ring = 1; ring <= 4; ring++) {
+        const r = (ring / 4) * maxR;
+        ctx.beginPath();
+        for (let i = 0; i <= n; i++) {
+          const angle = (i / n) * Math.PI * 2 - Math.PI / 2;
+          const x = cx + r * Math.cos(angle);
+          const y = cy + r * Math.sin(angle);
+          if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+
+      // Draw axis lines
+      for (let i = 0; i < n; i++) {
+        const angle = (i / n) * Math.PI * 2 - Math.PI / 2;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(cx + maxR * Math.cos(angle), cy + maxR * Math.sin(angle));
+        ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+
+      // Draw axis labels (short)
+      const shortLabels = ['OWN', 'COACH', 'INFLNC', 'CROSS', 'STRAT', 'THOUGHT', 'DATA', 'SYSTEM', 'CUST', 'EXEC'];
+      ctx.font = '9px "JetBrains Mono", monospace';
+      ctx.fillStyle = 'rgba(255,255,255,0.45)';
+      ctx.textAlign = 'center';
+      for (let i = 0; i < n; i++) {
+        const angle = (i / n) * Math.PI * 2 - Math.PI / 2;
+        const lR = maxR + 16;
+        const x = cx + lR * Math.cos(angle);
+        const y = cy + lR * Math.sin(angle) + 3;
+        ctx.fillText(shortLabels[i], x, y);
+      }
+
+      // Draw filled polygon
+      ctx.beginPath();
+      for (let i = 0; i < n; i++) {
+        const angle = (i / n) * Math.PI * 2 - Math.PI / 2;
+        const r = (scores[i] / 4) * maxR;
+        const x = cx + r * Math.cos(angle);
+        const y = cy + r * Math.sin(angle);
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+      ctx.fillStyle = 'rgba(0, 212, 255, 0.15)';
+      ctx.fill();
+      ctx.strokeStyle = '#00d4ff';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Draw dots at each vertex
+      for (let i = 0; i < n; i++) {
+        const angle = (i / n) * Math.PI * 2 - Math.PI / 2;
+        const r = (scores[i] / 4) * maxR;
+        const x = cx + r * Math.cos(angle);
+        const y = cy + r * Math.sin(angle);
+        const color = scores[i] <= 1 ? '#ef4444' : scores[i] <= 2 ? '#f59e0b' : scores[i] <= 3 ? '#00d4ff' : '#22c55e';
+        ctx.beginPath();
+        ctx.arc(x, y, 5, 0, Math.PI * 2);
+        ctx.fillStyle = color;
+        ctx.fill();
+        ctx.strokeStyle = '#06060b';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+    }
+
+    function ghRestart() {
+      ghAnswers = new Array(GH_TOTAL).fill(0);
+      ghCurrent = 0;
+      document.querySelectorAll('.gh-option').forEach(o => o.classList.remove('selected'));
+      document.getElementById('ghQuestions').style.display = '';
+      document.getElementById('ghNav').style.display = '';
+      document.getElementById('ghProgress').style.display = '';
+      document.getElementById('ghResults').classList.remove('active');
+      ghShowCard(0);
+      ghUpdateProgress();
+    }
+
+    // Initialize Growth Hub on load
+    ghInitProgress();
   </script>
 </body>
 </html>
