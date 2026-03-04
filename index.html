@@ -968,19 +968,29 @@
     }
 
     .stack-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 1.25rem 1rem;
+      padding: 1.25rem 1rem 1rem;
       text-align: center;
       transition: var(--transition);
-      cursor: default;
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
     }
 
     .stack-item:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-2px);
+      border-color: var(--accent-cyan);
+      transform: translateY(-3px);
       background: var(--bg-card-hover);
+      box-shadow: 0 6px 20px rgba(0, 212, 255, 0.08);
+    }
+
+    .stack-item:hover .stack-name {
+      color: var(--accent-cyan);
     }
 
     .stack-icon {
@@ -992,6 +1002,7 @@
       font-size: 0.8rem;
       font-weight: 600;
       color: var(--text-primary);
+      transition: color 0.2s;
     }
 
     .stack-category {
@@ -1001,6 +1012,41 @@
       margin-top: 0.25rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
+    }
+
+    .stack-plugin {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.58rem;
+      font-family: var(--font-mono);
+      color: var(--accent-cyan);
+      background: rgba(0, 212, 255, 0.08);
+      border: 1px solid rgba(0, 212, 255, 0.15);
+      border-radius: 4px;
+      padding: 2px 6px;
+      margin-top: 0.5rem;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .stack-item:hover .stack-plugin {
+      background: rgba(0, 212, 255, 0.15);
+      border-color: rgba(0, 212, 255, 0.3);
+    }
+
+    .stack-link-icon {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 0.6rem;
+      color: var(--text-tertiary);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .stack-item:hover .stack-link-icon {
+      opacity: 1;
     }
 
     /* ═══════════════════════════════════════════════════════════
@@ -3311,69 +3357,94 @@
       <div class="section-header reveal">
         <div class="section-label">PM Toolkit</div>
         <h2 class="section-title">Tools that power the product work.</h2>
+        <p class="section-desc">Each tool links to the Brain OS skill or open-source repo where it's used. Click to explore.</p>
       </div>
 
       <div class="stack-grid">
-        <div class="stack-item reveal reveal-delay-1">
+        <a href="https://kustonaut.github.io/brain-os/" target="_blank" rel="noopener" class="stack-item reveal reveal-delay-1">
+          <span class="stack-link-icon">↗</span>
           <div class="stack-icon">📋</div>
           <div class="stack-name">Azure DevOps</div>
           <div class="stack-category">Discovery &amp; Planning</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-1">
+          <div class="stack-plugin">🧠 /m365_ado_reporter</div>
+        </a>
+        <a href="https://kustonaut.github.io/kql-cheat-sheet" target="_blank" rel="noopener" class="stack-item reveal reveal-delay-1">
+          <span class="stack-link-icon">↗</span>
           <div class="stack-icon">🔍</div>
           <div class="stack-name">KQL / Kusto</div>
           <div class="stack-category">Discovery &amp; Data</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-2">
+          <div class="stack-plugin">📖 KQL Cheat Sheet</div>
+        </a>
+        <a href="https://kustonaut.github.io/github-issue-analytics" target="_blank" rel="noopener" class="stack-item reveal reveal-delay-2">
+          <span class="stack-link-icon">↗</span>
           <div class="stack-icon">📊</div>
           <div class="stack-name">Power BI / Excel</div>
           <div class="stack-category">Strategy &amp; Analytics</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-2">
+          <div class="stack-plugin">📊 Issue Analytics</div>
+        </a>
+        <a href="https://kustonaut.github.io/brain-os/" target="_blank" rel="noopener" class="stack-item reveal reveal-delay-2">
+          <span class="stack-link-icon">↗</span>
           <div class="stack-icon">📝</div>
           <div class="stack-name">Spec Writing</div>
           <div class="stack-category">Strategy</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-3">
+          <div class="stack-plugin">🧠 /prd_writer</div>
+        </a>
+        <a href="https://github.com/kustonaut/github-issue-analytics" target="_blank" rel="noopener" class="stack-item reveal reveal-delay-3">
+          <span class="stack-link-icon">↗</span>
           <div class="stack-icon">🐍</div>
           <div class="stack-name">Python</div>
           <div class="stack-category">Execution</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-3">
+          <div class="stack-plugin">🐙 github-issue-analytics</div>
+        </a>
+        <a href="https://github.com/kustonaut/brain-os" target="_blank" rel="noopener" class="stack-item reveal reveal-delay-3">
+          <span class="stack-link-icon">↗</span>
           <div class="stack-icon">⚡</div>
           <div class="stack-name">PowerShell</div>
           <div class="stack-category">Execution</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-4">
+          <div class="stack-plugin">🧠 Daily Pipeline</div>
+        </a>
+        <a href="https://kustonaut.github.io/brain-os/" target="_blank" rel="noopener" class="stack-item reveal reveal-delay-4">
+          <span class="stack-link-icon">↗</span>
           <div class="stack-icon">🤖</div>
           <div class="stack-name">GitHub Copilot</div>
           <div class="stack-category">Intelligence</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-4">
+          <div class="stack-plugin">🧠 30+ Custom Skills</div>
+        </a>
+        <a href="https://kustonaut.github.io/brain-os/" target="_blank" rel="noopener" class="stack-item reveal reveal-delay-4">
+          <span class="stack-link-icon">↗</span>
           <div class="stack-icon">🧠</div>
           <div class="stack-name">GPT-4o / Claude</div>
           <div class="stack-category">Intelligence</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-5">
+          <div class="stack-plugin">🧠 /career_coach</div>
+        </a>
+        <a href="https://github.com/kustonaut/brain-os" target="_blank" rel="noopener" class="stack-item reveal reveal-delay-5">
+          <span class="stack-link-icon">↗</span>
           <div class="stack-icon">🔗</div>
           <div class="stack-name">Microsoft Graph</div>
           <div class="stack-category">Intelligence</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-5">
+          <div class="stack-plugin">🧠 Signal Pipeline</div>
+        </a>
+        <a href="https://github.com/kustonaut/brain-os" target="_blank" rel="noopener" class="stack-item reveal reveal-delay-5">
+          <span class="stack-link-icon">↗</span>
           <div class="stack-icon">💻</div>
           <div class="stack-name">VS Code</div>
           <div class="stack-category">Execution</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-6">
+          <div class="stack-plugin">🧠 Workspace OS</div>
+        </a>
+        <a href="https://github.com/kustonaut/issue-sentinel" target="_blank" rel="noopener" class="stack-item reveal reveal-delay-6">
+          <span class="stack-link-icon">↗</span>
           <div class="stack-icon">🐙</div>
           <div class="stack-name">GitHub Actions</div>
           <div class="stack-category">Execution</div>
-        </div>
-        <div class="stack-item reveal reveal-delay-6">
+          <div class="stack-plugin">🐙 issue-sentinel</div>
+        </a>
+        <a href="https://github.com/kustonaut/365daysofADX" target="_blank" rel="noopener" class="stack-item reveal reveal-delay-6">
+          <span class="stack-link-icon">↗</span>
           <div class="stack-icon">🎨</div>
           <div class="stack-name">HTML / CSS / JS</div>
           <div class="stack-category">Execution</div>
-        </div>
+          <div class="stack-plugin">🐙 365daysofADX</div>
+        </a>
       </div>
     </div>
   </section>
